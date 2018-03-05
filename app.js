@@ -20,6 +20,6 @@ app.get("/parlax-photography", function(req,res){
 	res.render("websites/paralaxPhotography");
 });
 
-app.listen(process.env.PORT || 5000, function(){
+app.listen(process.env.PORT || 80, function(){
 	console.log("Starting Server");
 });
