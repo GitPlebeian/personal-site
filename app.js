@@ -12,9 +12,9 @@ var options = {
 }
 
 app.get('*', function(req,res) {
-	res.redirect('https://' + req.header.host + req.url);
+	res.redirect('https://www.jaxtubbs.site');
 })
-
+ // + req.header.host + req.url
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
