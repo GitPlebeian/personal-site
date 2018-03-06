@@ -4,7 +4,7 @@ app = express();
 var http = require('https')
 var fs = require('fs')
 
-var sslPath = '/etc/letsencrypt/live/www.jaxtubbs.com/'
+var sslPath = '/etc/letsencrypt/live/www.jaxtubbs.site/'
 
 var options = {
 	key: fs.readFileSync(sslPath + 'privkey.pem'),
