@@ -1,5 +1,5 @@
 this.express = require('express');
-this.app = express();
+this.app = this.express();
 
 var http = require('https')
 var fs = require('fs')
