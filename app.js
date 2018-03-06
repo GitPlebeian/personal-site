@@ -1,5 +1,3 @@
-express = require('express');
-app = express();
 
 var https = require('https')
 var fs = require('fs')
@@ -37,10 +35,17 @@ app.set("view engine", "ejs");
 // });
 
 server = https.createServer(options, function(req,res){
+	var express = require('express');
+	var app = express();
+
+	console.log("Starting");
+
+	app.use(express.static("public"));
+	app.set("view engine", "ejs");
+
 	app.get("/", function(req,res){
 		console.log("Someone Connected")
 		res.render("homepage");
 	});
-})
+}).listen(443)
 // io = require('socket.io').listen(server)
-server.listen(443)
