@@ -3,7 +3,8 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "forever": "^0.15.3"
+    "forever": "^0.15.3",
+    "fs": "0.0.1-security"
   },
   "scripts": {
     "start": "node app.js"
