@@ -11,7 +11,7 @@ var options = {
 	cert: fs.readFileSync(sslPath + 'fullchain.pem')
 }
 
-this.app.use(express.static("public"));
+this.app.use(this.express.static("public"));
 this.app.set("view engine", "ejs");
 
 this.app.get("/", function(req,res){
