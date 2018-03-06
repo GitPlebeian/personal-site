@@ -8,9 +8,6 @@ var options = {
 	key: fs.readFileSync(sslPath + 'privkey.pem'),
 	cert: fs.readFileSync(sslPath + 'fullchain.pem')
 }
-
-app.use(express.static("public"));
-app.set("view engine", "ejs");
 //
 // app.get("/", function(req,res){
 // 	console.log("Someone Connected")
