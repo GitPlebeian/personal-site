@@ -1,5 +1,5 @@
-var express = require('express');
-app = express();
+this.express = require('express');
+this.app = express();
 
 var http = require('https')
 var fs = require('fs')
@@ -11,30 +11,30 @@ var options = {
 	cert: fs.readFileSync(sslPath + 'fullchain.pem')
 }
 
-app.use(express.static("public"));
-app.set("view engine", "ejs");
+this.app.use(express.static("public"));
+this.app.set("view engine", "ejs");
 
-app.get("/", function(req,res){
+this.app.get("/", function(req,res){
 	res.render("homepage");
 });
 
-app.get('/health-check',(req,res) => res.sendStatus(200));
+this.app.get('/health-check',(req,res) => res.sendStatus(200));
 
 
-app.get("/websites", function(req,res){
+this.app.get("/websites", function(req,res){
 	res.render("websites");
 });
-app.get("/contact", function(req,res){
+this.app.get("/contact", function(req,res){
 	res.render("contact");
 });
 
-app.get("/single-page", function(req,res){
+this.app.get("/single-page", function(req,res){
 	res.render("websites/onePage");
 });
-app.get("/parlax-photography", function(req,res){
+this.app.get("/parlax-photography", function(req,res){
 	res.render("websites/paralaxPhotography");
 });
 
-server = http.createServer(options, app)
-io = require('socket.io').listen(server)
-server.listen(443)
+this.server = http.createServer(options, this.app)
+this.io = require('socket.io').listen(this.server)
+this.server.listen(443)
