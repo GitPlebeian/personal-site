@@ -10,10 +10,10 @@ var options = {
 	key: fs.readFileSync(sslPath + 'privkey.pem'),
 	cert: fs.readFileSync(sslPath + 'fullchain.pem')
 }
-// 
-// app.get('*', function(req,res) {
-// 	res.redirect('https://' + req.header.host + req.url);
-// })
+
+app.get('*', function(req,res) {
+	res.redirect('https://' + req.headers.host + req.url);
+})
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
