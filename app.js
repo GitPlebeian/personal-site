@@ -14,6 +14,10 @@ var options = {
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+app.get('*', function(req, res) {  
+    res.redirect('https://' + req.headers.host + req.url);
+})
+
 app.get("/", function(req,res){
 	console.log("Someone Connected")
 	res.render("homepage");
@@ -38,4 +42,4 @@ app.get("/parlax-photography", function(req,res){
 
 server = http.createServer(options, app)
 io = require('socket.io').listen(server)
-server.listen(443)
+server.listen(80)
