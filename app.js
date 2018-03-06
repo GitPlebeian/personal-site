@@ -4,6 +4,8 @@ this.app = this.express();
 var http = require('https')
 var fs = require('fs')
 
+var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
+this.app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/]));
 var sslPath = '/etc/letsencrypt/live/www.jaxtubbs.site/'
 
 var options = {
