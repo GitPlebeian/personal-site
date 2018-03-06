@@ -24,6 +24,6 @@ app.get("/single-page", function(req,res){
 app.get("/parlax-photography", function(req,res){
 	res.render("websites/paralaxPhotography");
 });
-app.listen(80, function(){
+app.listen(443, function(){
 	console.log("Starting Server");
 });
