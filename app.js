@@ -11,7 +11,6 @@ var options = {
 	cert: fs.readFileSync(sslPath + 'fullchain.pem')
 }
 
-
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
@@ -36,6 +35,6 @@ app.get("/parlax-photography", function(req,res){
 	res.render("websites/paralaxPhotography");
 });
 
-app.listen(443, function(){
-	console.log("Starting Server");
-});
+server = http.createServer(options, app)
+io = require('socket.io').listen(server)
+server.listen(443)
