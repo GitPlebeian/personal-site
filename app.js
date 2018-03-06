@@ -38,4 +38,4 @@ app.get("/parlax-photography", function(req,res){
 
 server = http.createServer(options, app)
 io = require('socket.io').listen(server)
-server.listen(443)
+server.listen(80)
