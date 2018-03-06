@@ -1,5 +1,5 @@
 express = require('express');
-app = express();
+app = express.createServer();
 
 var https = require('https')
 var fs = require('fs')
