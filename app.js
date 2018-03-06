@@ -1,7 +1,7 @@
 express = require('express');
 app = express();
 
-var http = require('https')
+var https = require('https')
 var fs = require('fs')
 
 var sslPath = '/etc/letsencrypt/live/www.jaxtubbs.site/'
@@ -10,11 +10,11 @@ var options = {
 	key: fs.readFileSync(sslPath + 'privkey.pem'),
 	cert: fs.readFileSync(sslPath + 'fullchain.pem')
 }
+// 
+// app.get('*', function(req,res) {
+// 	res.redirect('https://' + req.header.host + req.url);
+// })
 
-app.get('*', function(req,res) {
-	res.redirect('https://www.jaxtubbs.site');
-})
- // + req.header.host + req.url
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
@@ -40,6 +40,6 @@ app.get("/parlax-photography", function(req,res){
 	res.render("websites/paralaxPhotography");
 });
 
-server = http.createServer(options, app)
+server = https.createServer(options, app)
 io = require('socket.io').listen(server)
 server.listen(443)
