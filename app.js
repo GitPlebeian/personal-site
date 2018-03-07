@@ -12,7 +12,7 @@ var options = {
 }
 
 app.use(express.static("public"));
-app.set("view engine", "ejs");
+// app.set("view engine", "html");
 
 app.get("/", function(req,res){
 	console.log("Someone Connected")
@@ -20,7 +20,7 @@ app.get("/", function(req,res){
 });
 
 app.get("/google093b9f16cb00e240.html", function(req,res){
-	res.render("google093b9f16cb00e240.html");
+	res.render("google093b9f16cb00e240");
 });
 
 
