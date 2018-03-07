@@ -74,7 +74,8 @@ h1,h2,h3,h4,h5,h6{
 }
 @media (max-width: 560px) {
   .mainContent{
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 400;
   }
   .introMain{
     color: #00ccce;
@@ -85,5 +86,9 @@ h1,h2,h3,h4,h5,h6{
     font-size: 30px;
     color: #f9585a;
     font-weight: 300;
+  }
+  .intro{
+    margin-left: 3%;
+    margin-top: 60px;
   }
 }
