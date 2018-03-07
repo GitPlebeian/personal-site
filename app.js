@@ -19,7 +19,9 @@ app.get("/", function(req,res){
 	res.render("homepage");
 });
 
-app.get('/health-check',(req,res) => res.sendStatus(200));
+app.get("/google093b9f16cb00e240.html", function(req,res){
+	res.render("google093b9f16cb00e240.html");
+});
 
 
 app.get("/websites", function(req,res){
