@@ -1,12 +1,10 @@
 {
-  "name": "",
+  "name": "personal-site",
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "forever": "^0.15.3",
     "fs": "0.0.1-security",
-    "html": "^1.0.0",
-    "self-signed-https": "^1.0.5",
     "socket.io": "^2.0.4"
   },
   "scripts": {

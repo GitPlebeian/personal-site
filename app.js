@@ -18,12 +18,6 @@ app.get("/", function(req,res){
 	console.log("Someone Connected")
 	res.render("homepage");
 });
-
-// app.get("/google093b9f16cb00e240.html", function(req,res){
-// 	res.render("google093b9f16cb00e240");
-// });
-
-
 app.get("/websites", function(req,res){
 	res.render("websites");
 });
