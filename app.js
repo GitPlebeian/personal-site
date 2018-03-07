@@ -12,7 +12,7 @@ var options = {
 }
 
 app.use(express.static("public"));
-// app.set("view engine", "html");
+app.set("view engine", "html");
 
 app.get("/", function(req,res){
 	console.log("Someone Connected")
