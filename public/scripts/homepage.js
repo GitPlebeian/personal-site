@@ -1,6 +1,6 @@
-// $(window).on('beforeunload', function() {
-//     $(window).scrollTop(0);
-// });
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+});
 (function($) {
   $.fn.visible = function(partial) {
 
@@ -29,7 +29,7 @@ $(window).scroll(function(event) {
   });
 
 });
-// 
+//
 var win = $(window);
 var allMods = $(".module");
 

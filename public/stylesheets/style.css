@@ -62,5 +62,28 @@ h1,h2,h3,h4,h5,h6{
   to { transform: translateY(0); }
 }
 
-@media (min-width: 993px) {
+@media (max-width: 993px) {
+  .mainContent{
+    font-size: 27px;
+  }
+}
+@media (max-width: 767px) {
+  .mainContent{
+    font-size: 22px;
+  }
+}
+@media (max-width: 560px) {
+  .mainContent{
+    font-size: 18px;
+  }
+  .introMain{
+    color: #00ccce;
+    font-size: 40px;
+    font-weight: 300;
+  }
+  .introP{
+    font-size: 30px;
+    color: #f9585a;
+    font-weight: 300;
+  }
 }
