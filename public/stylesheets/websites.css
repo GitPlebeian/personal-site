@@ -3,89 +3,35 @@ body{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  background-color: #212121;
 }
-div{
-  display: block;
+a{
+  color: white;
+}
+.navBar{
+  background-color: #f9585a;
+  width: 100%;
   overflow: hidden;
-}
-h1,h2,h3,h4,h5,h6{
-  font-weight: normal;
-}
-.link{
   text-align: center;
-}
-.link a{
+  font-size: 33px;
   color: white;
 }
-/* Intro Stuff */
-.parallax-window{
-  height: 100vh;
-  background: transparent;
+.navBar p{
+  margin: 25px 5px;
 }
-.intro{
-  margin-left: 8%;
-  margin-top: 100px;
-}
-.introMain{
-  color: #00ccce;
-  font-size: 60px;
-  font-weight: 300;
-}
-.introP{
-  font-size: 40px;
-  color: #f9585a;
-  font-weight: 300;
-}
-/* End of intro stuff */'
-.content{
-  /* color:#212121; */
-}
-.rollIn{
-  /* overflow: hidden; */
-}
-.mainContent{
-  overflow: hidden;
-  box-sizing: border-box;
-  font-weight: 300;
+.text{
   color: white;
+  text-decoration: none;
+  font-size: 28px;
   background-color: #f9585a;
-  border: 20px solid #f9585a;
-  border-radius: 4px;
-  font-size: 35px;
-  position: relative;
+  text-align: center;
+  padding: 10px;
 }
-.contentBox{
-  font-size: 30px;
-  color: white;
-  font-weight: 300;
-}
-.blue{
-  background-color: #16a5f9;
-  border-color: #16a5f9;
-}
-.contentBox .col{
-  box-sizing: border-box;
-  border-width: 15px;
-  border-style: solid;
-  border-radius: 4px;
-}
-.red{
-  background-color: #f9585a;
-  border-color: #f9585a;
+.img img{
+  width: 100%;
 }
 .content{
-  margin-top: 50px;
-}
-.come-in {
-  transform: translateY(150px);
-  animation: come-in 0.6s ease forwards;
-}
-.come-in:nth-child(odd) {
-  animation-duration: 0.4s; /* So they look staggered */
-}
-
-@keyframes come-in {
-  to { transform: translateY(0); }
+  margin-top: 60px;
 }
 .container{
   margin-left: 2.5%;
@@ -95,15 +41,8 @@ h1,h2,h3,h4,h5,h6{
 .col{
   float: left;
   margin-left: 4%;
-  margin-bottom: 2.5%;
+  margin-bottom: 4%;
 }
-@media (min-width: 1215px){
-  .container{
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-}
-
 @media (min-width: 993px){
   .lg-1 {width: 4.66666%;}
   .lg-2 {width: 13.33333%;}
@@ -133,12 +72,6 @@ h1,h2,h3,h4,h5,h6{
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
-  .mainContent{
-    font-size: 27px;
-  }
-  .contentBox{
-    font-size: 27px;
-  }
   .md-1 {width: 4.66666%;}
   .md-2 {width: 13.33333%;}
   .md-3 {width: 22%;}
@@ -167,13 +100,6 @@ h1,h2,h3,h4,h5,h6{
 }
 
 @media (max-width: 768px ) and (min-width: 576px) {
-  .mainContent{
-    font-size: 22px;
-  }
-  .contentBox{
-    font-size: 22px;
-  }
-
   .sm-1 {width: 4.66666%;}
   .sm-2 {width: 13.33333%;}
   .sm-3 {width: 22%;}
@@ -203,29 +129,6 @@ h1,h2,h3,h4,h5,h6{
 @media (max-width: 576px) {
   div[class*="col"]{
     width: 100%;
-    margin-left: 0px;
-  }
-  .mainContent{
-    font-size: 20px;
-    font-weight: 400;
-  }
-  .contentBox{
-    font-size: 20px;
-    font-weight: 400;
-  }
-  .introMain{
-    color: #00ccce;
-    font-size: 60px;
-    font-weight: 300;
-  }
-  .introP{
-    font-size: 40px;
-    color: #f9585a;
-    font-weight: 300;
-  }
-  .intro{
-    text-align: center;
-    margin-top: 60px;
     margin-left: 0px;
   }
 }
