@@ -22,6 +22,10 @@ app.get("/websites", function(req,res){
 	res.render("websites");
 });
 
+app.get("/websites/business", function(req,res){
+	res.render("business.ejs");
+});
+
 server = http.createServer(options, app)
 io = require('socket.io').listen(server)
 server.listen(443)
