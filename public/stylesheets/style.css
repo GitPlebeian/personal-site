@@ -36,13 +36,6 @@ h1,h2,h3,h4,h5,h6{
   color: #f9585a;
   font-weight: 300;
 }
-/* End of intro stuff */'
-.content{
-  /* color:#212121; */
-}
-.rollIn{
-  /* overflow: hidden; */
-}
 .mainContent{
   overflow: hidden;
   box-sizing: border-box;
@@ -51,11 +44,11 @@ h1,h2,h3,h4,h5,h6{
   background-color: #f9585a;
   border: 20px solid #f9585a;
   border-radius: 4px;
-  font-size: 35px;
+  font-size: 24px;
   position: relative;
 }
 .contentBox{
-  font-size: 30px;
+  font-size: 24px;
   color: white;
   font-weight: 300;
 }
@@ -74,18 +67,8 @@ h1,h2,h3,h4,h5,h6{
   border-color: #f9585a;
 }
 .content{
-  margin-top: 50px;
-}
-.come-in {
-  transform: translateY(150px);
-  animation: come-in 0.6s ease forwards;
-}
-.come-in:nth-child(odd) {
-  animation-duration: 0.4s; /* So they look staggered */
-}
-
-@keyframes come-in {
-  to { transform: translateY(0); }
+  padding-top: 2.5%;
+  background-color: #666;
 }
 .container{
   margin-left: 2.5%;
@@ -105,6 +88,10 @@ h1,h2,h3,h4,h5,h6{
 }
 
 @media (min-width: 993px){
+  .container{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
   .lg-1 {width: 4.66666%;}
   .lg-2 {width: 13.33333%;}
   .lg-3 {width: 22%;}
@@ -133,12 +120,6 @@ h1,h2,h3,h4,h5,h6{
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
-  .mainContent{
-    font-size: 27px;
-  }
-  .contentBox{
-    font-size: 27px;
-  }
   .md-1 {width: 4.66666%;}
   .md-2 {width: 13.33333%;}
   .md-3 {width: 22%;}
@@ -207,11 +188,9 @@ h1,h2,h3,h4,h5,h6{
   }
   .mainContent{
     font-size: 20px;
-    font-weight: 400;
   }
   .contentBox{
     font-size: 20px;
-    font-weight: 400;
   }
   .introMain{
     color: #00ccce;
