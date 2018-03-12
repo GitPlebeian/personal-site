@@ -11,6 +11,9 @@ div{
 h1,h2,h3,h4,h5,h6{
   font-weight: normal;
 }
+ul{
+  padding-left: 30px;
+}
 .link{
   text-align: center;
 }
@@ -68,7 +71,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .content{
   padding-top: 2.5%;
-  background-color: #666;
+  background-color: #5b5b5b;
 }
 .container{
   margin-left: 2.5%;
@@ -187,10 +190,10 @@ h1,h2,h3,h4,h5,h6{
     margin-left: 0px;
   }
   .mainContent{
-    font-size: 20px;
+    font-size: 18px;
   }
   .contentBox{
-    font-size: 20px;
+    font-size: 18px;
   }
   .introMain{
     color: #00ccce;
