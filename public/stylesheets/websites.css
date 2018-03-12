@@ -3,7 +3,7 @@ body{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  background-color: #212121;
+  background-color: #5b5b5b;
 }
 a{
   color: white;
@@ -24,14 +24,21 @@ a{
   text-decoration: none;
   font-size: 25px;
   background-color: #f9585a;
+  border-radius: 15px 15px 0px 0px;
   text-align: center;
   padding: 10px;
 }
 .img img{
   width: 100%;
 }
-.content{
-  margin-top: 60px;
+.info{
+  margin-top: 20px;
+  color: white;
+  font-size: 24px;
+  overflow: auto;
+  background-color: #16a5f9;
+  border: 10px solid #16a5f9;
+  border-radius: 4px;
 }
 .container{
   margin-left: 2.5%;
