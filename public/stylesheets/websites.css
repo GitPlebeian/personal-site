@@ -30,6 +30,7 @@ a{
 }
 .img img{
   width: 100%;
+  border-radius: 0px 0px 6px 6px;
 }
 .info{
   margin-top: 20px;
