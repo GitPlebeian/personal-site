@@ -111,11 +111,19 @@ hr{
 .textCenter{
   text-align: center;
 }
-
+.footer{
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  width: 200px;
+  transform: translate(-50%,0);
+}
 .container{
   margin-left: 2.5%;
   margin-right: 2.5%;
   overflow: hidden;
+  /* position: absolute; */
 }
 .marginAuto{
   margin: 0 auto;
@@ -213,6 +221,9 @@ hr{
   .sm-12-nl {width: 100%; margin-left: 0px;}
 }
 @media (max-width: 576px) {
+  .info{
+    font-size: 18px;
+  }
   div[class*="col"]{
     width: 100%;
     margin-left: 0px;
