@@ -15,6 +15,20 @@ hr{
   border-style: solid;
   border-color: #f9585a;
 }
+.item1{
+  overflow: hidden;
+  font-size: 20px;
+}
+.itemImg{
+  overflow: hidden;
+}
+.itemImg img{
+  /* overflow: hidden; */
+  width: 100%;
+}
+#content{
+  margin-top: 2.5%;
+}
 .content{
   overflow: auto;
   margin-top: 51px;
@@ -42,6 +56,22 @@ hr{
 }
 .red{
   color: #f9585a;
+}
+.people{
+  float: left;
+  width: 200px;
+  margin-top: 50px;
+  margin-right: 40px;
+  margin-left: 2.5%;
+  font-size: 16px;
+  text-align: center;
+}
+.person{
+  overflow: hidden;
+}
+.person img{
+  width: 100%;
+  border-radius: 50%;
 }
 /* ///////////// NAVBAR /////////////// */
 .navBar{
@@ -123,7 +153,6 @@ hr{
   margin-left: 2.5%;
   margin-right: 2.5%;
   overflow: hidden;
-  /* position: absolute; */
 }
 .marginAuto{
   margin: 0 auto;
@@ -133,9 +162,9 @@ hr{
   margin-left: 4%;
   margin-bottom: 2.5%;
 }
-@media (min-width: 993px){
+@media (min-width: 1200px){
   .realContent{
-    width: 930px;
+    width: 1100px;
     margin: 0 auto;
   }
   .lg-1 {width: 4.66666%;}
@@ -164,8 +193,47 @@ hr{
   .lg-11-nl {width: 91.33333%; margin-left: 0px;}
   .lg-12-nl {width: 100%;  margin-left: 0px;}
 }
+@media (min-width: 993px) and (max-width: 1199px){
+  .lg-1 {width: 4.66666%;}
+  .lg-2 {width: 13.33333%;}
+  .lg-3 {width: 22%;}
+  .lg-4 {width: 30.66666%;}
+  .lg-5 {width: 39.33333%;}
+  .lg-6 {width: 48%;}
+  .lg-7 {width: 56.66666%;}
+  .lg-8 {width: 65.33333%;}
+  .lg-9 {width: 74%;}
+  .lg-10 {width: 82.66666%;}
+  .lg-11 {width: 91.33333%;}
+  .lg-12 {width: 100%;}
+
+  .lg-1-nl {width: 4.66666%; margin-left: 0px;}
+  .lg-2-nl {width: 13.33333%; margin-left: 0px;}
+  .lg-3-nl {width: 22%; margin-left: 0px;}
+  .lg-4-nl {width: 30.66666%; margin-left: 0px;}
+  .lg-5-nl {width: 39.33333%; margin-left: 0px;}
+  .lg-6-nl {width: 48%; margin-left: 0px;}
+  .lg-7-nl {width: 56.66666%; margin-left: 0px;}
+  .lg-8-nl {width: 65.33333%; margin-left: 0px;}
+  .lg-9-nl {width: 74%; margin-left: 0px;}
+  .lg-10-nl {width: 82.66666%; margin-left: 0px;}
+  .lg-11-nl {width: 91.33333%; margin-left: 0px;}
+  .lg-12-nl {width: 100%;  margin-left: 0px;}
+}
 
 @media (max-width: 992px) and (min-width: 768px) {
+  .people{
+    float: none;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .person{
+    position: relative;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%,0);
+    font-size: 21px;
+  }
   .md-1 {width: 4.66666%;}
   .md-2 {width: 13.33333%;}
   .md-3 {width: 22%;}
@@ -194,6 +262,29 @@ hr{
 }
 
 @media (max-width: 768px ) and (min-width: 576px) {
+  .people{
+    float: none;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .person{
+    position: relative;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%,0);
+    font-size: 21px;
+  }
+  .itemImg{
+    width: 30%;
+    float: left;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  .descriptionOfItem{
+    width: 67.5%;
+    margin-left: 2.5%;
+    float: left;
+  }
   .sm-1 {width: 4.66666%;}
   .sm-2 {width: 13.33333%;}
   .sm-3 {width: 22%;}
@@ -221,6 +312,22 @@ hr{
   .sm-12-nl {width: 100%; margin-left: 0px;}
 }
 @media (max-width: 576px) {
+  .people{
+    float: none;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .person{
+    position: relative;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%,0);
+    font-size: 21px;
+  }
+  .person img{
+    height: 200px;
+    width: 200px;
+  }
   .info{
     font-size: 18px;
   }
