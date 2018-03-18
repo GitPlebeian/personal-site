@@ -122,7 +122,8 @@ h1,h2,h3,h4,h5,h6{
   color: #fb5096;
 }
 .navBar a.main{
-  background-color:  #f0aeaa;
+  background-color:  #fa6fa5;
+  color: white;
 }
 .navBar a{
   text-decoration: none;
@@ -150,6 +151,9 @@ h1,h2,h3,h4,h5,h6{
   background-color: #fb5096;
   margin: 7px 12.5px;
   transition: 0.2s;
+}
+.navIconBarActive .navIconBar{
+  background-color: white;
 }
 .navIconBar:nth-child(1){
   margin-top: 17px;

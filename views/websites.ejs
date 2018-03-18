@@ -16,10 +16,21 @@
     <link rel="icon" type="image/png" href="/images/Logo.png">
   </head>
   <body>
-    <div class="navBar">
-      <p>Website Templates</p>
+    <div class="navBar" id="navBar">
+      <a href="/" class="main">Home</a>
+      <a href="#">Websites</a>
+      <a href="/websites/flower">Flower</a>
+      <div class="navIcon" id="navIcon" onclick="navBar(this)">
+        <div class="navIconBar"></div>
+        <div class="navIconBar"></div>
+        <div class="navIconBar"></div>
+      </div>
     </div>
-    <div class="content">
+    <div class="navBarSlideIn" id="navBarSlideInid">
+      <a href="#">Websites</a>
+      <a href="/websites/flower">Flowers</a>
+    </div>
+    <div class="content" onclick="focusContent()">
       <div class="container">
         <div class="col lg-12-nl md-12-nl sm-12-nl">
           <div class="info">
@@ -28,29 +39,14 @@
         </div>
         <div class="col lg-4-nl md-6-nl sm-6-nl">
           <div class="text">
-            <a href="/websites/flower">Business</a>
+            <a href="/websites/flower">Flowers</a>
           </div>
           <div class="img">
-            <a href="/websites/flower"><img src="/images/businessWebsite.jpg" alt=""></a>
-          </div>
-        </div>
-        <div class="col lg-4 md-6 sm-6">
-          <div class="text">
-            <a href="#">Website</a>
-          </div>
-          <div class="img">
-            <a href="#"><img src="/images/websiteBlank.jpg" alt=""></a>
-          </div>
-        </div>
-        <div class="col lg-4 md-6-nl sm-6-nl">
-          <div class="text">
-            <a href="#">Website</a>
-          </div>
-          <div class="img">
-            <a href="#"><img src="/images/websiteBlank.jpg" alt=""></a>
+            <a href="/websites/flower"><img src="/images/flowerWebsite.jpg" alt=""></a>
           </div>
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="/scripts/flower.js"></script>
   </body>
 </html>
