@@ -1,0 +1,187 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: normal;
+}
+.indentText{
+  text-indent: 40px;
+}
+.bold{
+  font-weight: bold;
+}
+.textBoxWithPicture{
+  background-color: #fb5096;
+  padding: 15px;
+  border-radius: 3px;
+  color: white;
+}
+.textBoxWithPicture:nth-child(even) .textBoxImage{
+  float: right;
+}
+.textBoxWithPicture:nth-child(even) .textBoxHorzontalRule{
+  float: right;
+}
+.textBoxImage{
+  float: left;
+  background-image: url("/images/flower.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 3px;
+  height: 300px;
+  width: 300px;
+}
+.textBoxHorzontalRule{
+  float: left;
+  overflow: auto;
+  width: 5px;
+  background-color: white;
+  height: 300px;
+  margin: 0 15px;
+  border-radius: 2px;
+}
+.textBoxText h2{
+  margin: 0px;
+}
+.textBoxText hr{
+  border: 1px solid white;
+}
+/* frostedGlass */
+.frostedGlass{
+  background-image: url("/images/flower.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* height: 450px; */
+  overflow: hidden;
+  margin-bottom: 2.5%;
+}
+.frostedGlassText{
+  margin: 150px auto; /* Starting Point of text box */
+  color: white;
+  font-size: 40px;
+  padding: 20px;
+  z-index: 1;
+  width: 70%;
+  background: inherit;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.frostedGlassText::before{
+  z-index: -1;
+  width: 150%;
+  height: 150%;
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  bottom: 0;
+  right: 0;
+  background: inherit;
+  /* box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2); */
+  filter: blur(12px);
+}
+.frostedGlassText h1, .frostedGlassText p {
+  margin: 0px;
+}
+/* JumboTron */
+.jumbotron{
+  overflow: hidden;
+  height: 450px;
+}
+.jumbotronText{
+  font-size: 9vw;
+  text-align: center;
+  position: relative; */;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.jumbotronText h1{
+  margin: 0px;
+}
+.content{
+  margin-top: 52px;
+}
+/* NavBar style 1 Stuff */
+.navBar{
+  z-index: 10;
+  font-size: 20px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+  background-color: #fff;
+  color: #fb5096;
+}
+.navBar a.main{
+  background-color:  #f0aeaa;
+}
+.navBar a{
+  text-decoration: none;
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  color: inherit;
+}
+.navBar a:hover{
+  color: #000;
+  background-color: #fff;
+}
+.navBar a.main:hover{
+  background-color: #fff;
+}
+.navIcon{
+  width: 50px;
+  height: 52px;
+  display: none;
+  cursor: pointer;
+}
+.navIconBar{
+  width: 25px;
+  height: 1px;
+  background-color: #fb5096;
+  margin: 7px 12.5px;
+  transition: 0.2s;
+}
+.navIconBar:nth-child(1){
+  margin-top: 17px;
+}
+.navIconBarActive .navIconBar:nth-child(1){
+  -webkit-transform: rotate(-45deg) translate(0, 0);
+  transform: rotate(45deg) translate(6px,5px);
+}
+.navIconBarActive .navIconBar:nth-child(2){
+  opacity: 0;
+}
+.navIconBarActive .navIconBar:nth-child(3){
+  -webkit-transform: rotate(50deg) translate(0,0);
+  transform: rotate(-45deg) translate(6px, -5px);
+}
+.navBarSlideIn{
+  z-index: 9;
+  transition: 0.2s;
+  font-size: 20px;
+  overflow: hidden;
+  position: fixed;
+  top: -52px;
+  width: 100%;
+  background-color: #fb5096;
+}
+.navBarSlideIn a{
+  text-decoration: none;
+  padding: 14px 16px;
+  color: white;
+  display: block;
+}
+.navBarSlideIn a:hover{
+  background-color: white;
+  color: black;
+}
