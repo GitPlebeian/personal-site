@@ -213,6 +213,7 @@ a{
   .text{
     font-size: 21px;
     padding: 7px;
+    text-align: center;
   }
   .navBarSlideIn.navBarSlideInActive{
     top: 52px;
