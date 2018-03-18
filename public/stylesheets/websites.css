@@ -111,6 +111,7 @@ a{
   background-color: #16a5f9;
   border: 10px solid #16a5f9;
   border-radius: 4px;
+  text-align: center;
 }
 .container{
   margin-left: 2.5%;
@@ -213,7 +214,6 @@ a{
   .text{
     font-size: 21px;
     padding: 7px;
-    text-align: center;
   }
   .navBarSlideIn.navBarSlideInActive{
     top: 52px;

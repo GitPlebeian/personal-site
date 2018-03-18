@@ -2,54 +2,29 @@ $(window).on('beforeunload', function() {
     $(window).scrollTop(0);
 });
 
+var viewportHeight = $('.parallax-window').outerHeight();
+$('.banner').css({ height: viewportHeight });
 
-(function($) {
-  $.fn.visible = function(partial) {
-
-      var $t            = $(this),
-          $w            = $(window),
-          viewTop       = $w.scrollTop(),
-          viewBottom    = viewTop + $w.height(),
-          _top          = $t.offset().top,
-          _bottom       = _top + $t.height(),
-          compareTop    = partial === true ? _bottom : _top,
-          compareBottom = partial === true ? _top : _bottom;
-
-    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-
-  };
-
-})(jQuery);
-
-$(window).scroll(function(event) {
-
-  $(".module").each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("come-in");
+function navBar(navBar) {
+    var x = document.getElementById("navBar");
+    var y = document.getElementById("navBarSlideInid");
+    if (x.className === "navBar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navBar";
     }
-  });
+    navBar.classList.toggle("navIconBarActive");
+    y.classList.toggle("navBarSlideInActive");
+}
+function focusContent() {
+  var x = document.getElementById("navBar");
+  var y = document.getElementById("navBarSlideInid");
+  var z = document.getElementById("navIcon");
+  if (x.className === "navBar") {
 
-});
-//
-var win = $(window);
-var allMods = $(".module");
-
-// Already visible modules
-allMods.each(function(i, el) {
-  var el = $(el);
-  if (el.visible(true)) {
-    el.addClass("already-visible");
+  } else {
+      x.className = "navBar";
+      z.classList.toggle("navIconBarActive");
+      y.classList.toggle("navBarSlideInActive");
   }
-});
-
-win.scroll(function(event) {
-
-  allMods.each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("come-in");
-    }
-  });
-
-});
+}
