@@ -3,7 +3,7 @@ $(window).on('beforeunload', function() {
 });
 
 var viewportHeight = $('.parallax-window').outerHeight();
-$('.banner').css({ height: viewportHeight });
+$('.parallax-window').css({ height: viewportHeight });
 
 function navBar(navBar) {
     var x = document.getElementById("navBar");
