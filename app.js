@@ -25,6 +25,9 @@ app.get("/websites", function(req,res){
 app.get("/websites/flower", function(req,res){
 	res.render("websites/flower.ejs");
 });
+app.get("/websites/glass", function(req,res){
+	res.render("websites/glass.ejs");
+});
 
 server = http.createServer(options, app)
 io = require('socket.io').listen(server)
