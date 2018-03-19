@@ -193,6 +193,15 @@ hr{
   }
   .glass{
     font-size: 16px;
+    background-color: #40515c;
+    background-image: none;
+  }
+  .glass::before{
+    background: none;
+    width: 0px;
+    height: 0px;
+    box-shadow: none;
+    filter: none;
   }
   .content{
     margin-top: 2.5%;
