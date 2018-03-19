@@ -27,7 +27,7 @@ hr{
 .content{
   max-width: 900px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: calc(52px + 2.5%);
   position: relative;
   overflow: hidden;
 }
@@ -91,6 +91,85 @@ hr{
   position: relative;
   top: 34%;
   margin: 0px;
+}
+.navBar{
+  z-index: 10;
+  font-size: 20px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+  background-color: #40515c;
+  color: #fff;
+  display: none;
+}
+.navBar a.main{
+  background-color:  #40515c;
+}
+.navBar a{
+  text-decoration: none;
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  color: inherit;
+}
+.navBar a:hover{
+  color: #000;
+  background-color: #fff;
+}
+.navBar a.main:hover{
+  background-color: #fff;
+}
+.navIcon{
+  width: 50px;
+  height: 52px;
+  display: none;
+  cursor: pointer;
+}
+.navIconBar{
+  width: 25px;
+  height: 1px;
+  background-color: #fff;
+  margin: 7px 12.5px;
+  transition: 0.2s;
+}
+.navIconBarActive .navIconBar{
+}
+.navIconBar:nth-child(1){
+  margin-top: 17px;
+}
+.navIconBarActive .navIconBar:nth-child(1){
+  -webkit-transform: rotate(-45deg) translate(0, 0);
+  transform: rotate(45deg) translate(6px,5px);
+}
+.navIconBarActive .navIconBar:nth-child(2){
+  opacity: 0;
+}
+.navIconBarActive .navIconBar:nth-child(3){
+  -webkit-transform: rotate(50deg) translate(0,0);
+  transform: rotate(-45deg) translate(6px, -5px);
+}
+.navBarSlideIn{
+  z-index: 9;
+  transition: 0.2s;
+  font-size: 20px;
+  overflow: hidden;
+  position: fixed;
+  top: -104px;
+  width: 100%;
+  background-color: #40515c;
+  display: none;
+}
+.navBarSlideIn a{
+  text-decoration: none;
+  padding: 14px 16px;
+  color: white;
+  display: block;
+}
+.navBarSlideIn a:hover{
+  background-color: white;
+  color: black;
 }
 .container{
   margin-left: 2.5%;
@@ -187,6 +266,9 @@ hr{
   .sm-12-nl {width: 100%; margin-left: 0px;}
 }
 @media (max-width: 577px) {
+  .tempNav{
+    display: none;
+  }
   div[class*="col"]{
     width: 100%;
     margin-left: 0px;
@@ -204,6 +286,35 @@ hr{
     filter: none;
   }
   .content{
-    margin-top: 2.5%;
+  }
+  .navBarSlideIn.navBarSlideInActive{
+    top: 52px;
+    box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+  }
+  .navBar.responsive{
+    box-shadow: none;
+  }
+  .navBar a:not(.main) {
+    display: none;
+  }
+  .navBar .navIcon {
+    float: right;
+    display: inline-block;
+  }
+  .navBar.responsive .navIcon{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navBar.responsive a.main{
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .navBar{
+    display: block;
+  }
+  .navBarSlideIn{
+    display: block;
   }
 }

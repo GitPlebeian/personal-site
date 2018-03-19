@@ -14,7 +14,20 @@
   </head>
   <body>
     <div class="content">
-      <div class="navBar container">
+      <div class="navBar" id="navBar">
+        <a href="/" class="main">Home</a>
+        <div class="navIcon" id="navIcon" onclick="navBar(this)">
+          <div class="navIconBar"></div>
+          <div class="navIconBar"></div>
+          <div class="navIconBar"></div>
+        </div>
+      </div>
+      <div class="navBarSlideIn" id="navBarSlideInid">
+        <a href="/websites">Websites</a>
+        <a href="/websites/flower">Flowers</a>
+        <a href="#">Glass</a>
+      </div>
+      <div class="tempNav container">
         <div class="link glass col lg-3-nl md-3-nl sm-3-nl noglass">
           <a href="/">Home</a>
         </div>
@@ -91,5 +104,8 @@
           </div>
       </div>
     </div>
+    <script type="text/javascript" src="/scripts/glass.js">
+
+    </script>
   </body>
 </html>
