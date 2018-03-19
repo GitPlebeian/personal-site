@@ -26,7 +26,7 @@ app.get("/websites/flower", function(req,res){
 	res.render("websites/flower.ejs");
 });
 app.get("/websites/glass", function(req,res){
-	res.render("websites/flower.ejs");
+	res.render("websites/glass.ejs");
 });
 
 server = http.createServer(options, app)
