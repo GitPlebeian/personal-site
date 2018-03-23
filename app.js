@@ -3,7 +3,7 @@ app = express();
 const bodyParser = require('body-parser')
 const sgMail = require('@sendgrid/mail');
 
-sgMail.setApiKey("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");
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 var http = require('https')
 var fs = require('fs')
@@ -31,14 +31,14 @@ app.get("/contact", function(req,res){
 });
 app.post("/contact", function(req,res){
 	console.log("Sending Email");
-	const msg = {
-	to: 'jaxtubbs@gmail.com',
-	from: '' + req.body.email,
-	subject: '' + req.body.subject,
-	text: '' + req.body.message,
-	html: '<p>' + req.body.message + '</p>',
-	};
-	sgMail.send(msg);
+	// const msg = {
+	// to: 'jaxtubbs@gmail.com',
+	// from: '' + req.body.email,
+	// subject: '' + req.body.subject,
+	// text: '' + req.body.message,
+	// html: '<p>' + req.body.message + '</p>',
+	// };
+	// sgMail.send(msg);
 	res.redirect('/');
 });
 app.get("/websites/flower", function(req,res){
