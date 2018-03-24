@@ -2,6 +2,7 @@ express = require('express');
 app = express();
 const bodyParser = require('body-parser')
 const sgMail = require('@sendgrid/mail');
+var apiKey = require('./apikey.js')
 
 var http = require('https')
 var fs = require('fs')
@@ -13,7 +14,7 @@ var options = {
 	cert: fs.readFileSync(sslPath + 'fullchain.pem')
 }
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(apiKey());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static("public"));
