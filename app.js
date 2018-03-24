@@ -2,8 +2,7 @@ express = require('express');
 app = express();
 const bodyParser = require('body-parser')
 const sgMail = require('@sendgrid/mail');
-
-// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+var apiKey = require('./apikey.js')
 
 var http = require('https')
 var fs = require('fs')
@@ -14,6 +13,8 @@ var options = {
 	key: fs.readFileSync(sslPath + 'privkey.pem'),
 	cert: fs.readFileSync(sslPath + 'fullchain.pem')
 }
+
+sgMail.setApiKey(apiKey());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static("public"));
@@ -31,14 +32,14 @@ app.get("/contact", function(req,res){
 });
 app.post("/contact", function(req,res){
 	console.log("Sending Email");
-	// const msg = {
-	// to: 'jaxtubbs@gmail.com',
-	// from: '' + req.body.email,
-	// subject: '' + req.body.subject,
-	// text: '' + req.body.message,
-	// html: '<p>' + req.body.message + '</p>',
-	// };
-	// sgMail.send(msg);
+	const msg = {
+	to: 'jaxtubbs@gmail.com',
+	from: '' + req.body.email,
+	subject: '' + req.body.subject,
+	text: '' + req.body.message,
+	html: '<p>' + req.body.message + '</p>',
+	};
+	sgMail.send(msg);
 	res.redirect('/');
 });
 app.get("/websites/flower", function(req,res){
