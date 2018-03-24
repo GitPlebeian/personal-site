@@ -34,10 +34,10 @@ app.post("/contact", function(req,res){
 	console.log("Sending Email");
 	const msg = {
 	to: 'jaxtubbs@gmail.com',
-	from: '' + req.body.email,
-	subject: '' + req.body.subject,
+	from: 'ClientBot@gmail.com' + req.body.email,
+	subject: 'From: ' + req.body.email,
 	text: '' + req.body.message,
-	html: '<p>' + req.body.message + '</p>',
+	html: req.body.subject + '<br>' + '<p>' + req.body.message + '</p>',
 	};
 	sgMail.send(msg);
 	res.redirect('/');
