@@ -34,7 +34,7 @@ app.post("/contact", function(req,res){
 	console.log("Sending Email");
 	const msg = {
 	to: 'jaxtubbs@gmail.com',
-	from: 'ClientBot@gmail.com' + req.body.email,
+	from: 'ClientBot@gmail.com',
 	subject: 'From: ' + req.body.email,
 	text: '' + req.body.message,
 	html: req.body.subject + '<br>' + '<p>' + req.body.message + '</p>',
