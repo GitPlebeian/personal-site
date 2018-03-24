@@ -39,6 +39,7 @@ app.post("/contact", function(req,res){
 	text: '' + req.body.message,
 	html: req.body.subject + '<br>' + '<p>' + req.body.message + '</p>',
 	};
+	console.log("Email:" + msg);
 	sgMail.send(msg);
 	res.redirect('/');
 });
