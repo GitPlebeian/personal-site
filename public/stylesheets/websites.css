@@ -70,7 +70,6 @@ a{
 }
 .navBarSlideIn{
   z-index: 9;
-  transition: 0.25s;
   font-size: 20px;
   overflow: hidden;
   position: fixed;

@@ -150,7 +150,6 @@
     margin-left: 0px;
   }
   .navBarSlideIn.navBarSlideInActive{
-    top: 52px;
     box-shadow:0px 2px 5px rgba(0,0,0,0.2);
   }
   .navBar.responsive{
