@@ -17,7 +17,7 @@ function navBar(navBar) {
     } else {
         x.className = "navBar";
         y.animate({
-          top: '-52px'
+          top: '-68px'
         }, 200)
         setTimeout( function () {
             y.css('display', 'none')
