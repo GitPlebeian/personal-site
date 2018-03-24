@@ -45,14 +45,21 @@ textarea{
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
 }
-#send{
+.btn p{
+  margin: 0px;
+}
+.btn {
+  cursor: pointer;
   width: 100%;
   background-color: #16a5f9;
   color: white;
+  text-align: center;
+  padding: 7px 0;
   font-family: 'Roboto', sans-serif;
   margin-top: 14px;
+  border-radius: 4px;
 }
-#send:active{
+.btn:active{
   background-color: #0085e9;
 }
 label{

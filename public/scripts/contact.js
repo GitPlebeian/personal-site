@@ -1,10 +1,10 @@
-$('form').submit( function(event) {
-    var form = this;
-    event.preventDefault();
-    $("#send").attr("value","Message has been sent!")
+$('.btn').click( function(event) {
+  console.log("asdfffdf");
+    $(".btn p").html("Message has been sent!")
+    $("#redirect").html("Redirecting to home")
     setTimeout( function () {
-        form.submit();
-    }, 2500);
+        $("form").submit();
+    }, 2000);
 });
 
 function navBar(navBar) {
