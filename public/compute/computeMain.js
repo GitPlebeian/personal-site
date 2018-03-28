@@ -1,8 +1,10 @@
 if (localStorage.getItem('loggedIn') !== null) {
   $('#content').css('display','block');
-  $('#content').animate({
-    opacity: '1'
-  },400)
+  setTimeout(function(){
+    $('#content').animate({
+      opacity: '1'
+    },400)
+  },200)
 } else{
 
   rollIntro()
@@ -36,11 +38,17 @@ var secondRate                   = Number(localStorage.getItem('secondRate'))
 var computationRateUpgrade       = Number(localStorage.getItem('computationRateUpgrade'))
 var computationRateUpgradePrice  = Number(localStorage.getItem('computationRateUpgradePrice'))
 
-var upgradeModuleActive          = localStorage.getItem('upgradeModuleActive')
-var upgradeModulePrice           = 4
+if(localStorage.getItem('upgradeModuleActive') == 'true') {
+  var upgradeModuleActive = true
+} else {
+  var upgradeModuleActive = false
+}
+var upgradeModulePrice           = 0.5
 
 var time = 0;
 
+
+// Manual System Compute
 var computeWaiting = Math.floor(Math.random() * 4 + 1)
 $('.systemComputeWorkMod').each(function() {
   if ($(this).attr('id') == 'compute' + computeWaiting) {

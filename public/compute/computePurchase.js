@@ -9,7 +9,6 @@ $('#computationRateUpgrade').click(function() {
 })
 
 $('#purchaseUpgradeModule').click(function() {
-  console.log("asdf");
   if (purchase(upgradeModulePrice)) {
     upgradeModuleActive = true
   }
