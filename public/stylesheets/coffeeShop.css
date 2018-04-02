@@ -1,0 +1,76 @@
+html, body{
+  height: 100%;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar{
+  z-index: 10;
+  height: 100vh;
+  width: 70px;
+  position: fixed;
+  left: 0;
+  background-color: #444;
+  color: white;
+  font-size: 22px;
+  /* overflow: visible; */
+}
+.navBarLinkContainer{
+  overflow: visible;
+  display: block;
+  position: relative;
+  background-color: #16a5f9;
+  height: 70px;
+}
+.navbarLinkMod{
+  width: 70px;
+  height: 70px;
+  background-color: #16a5f9;
+  display: block;
+  position: relative;
+  line-height: 70px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  z-index: 10;
+  box-sizing: border-box;
+  border-right: 0px solid #16a5f9;
+}
+.navBarLinkContainer p{
+  position: absolute;
+  top: 50%;
+  margin: 0px;
+  transform: translate(0,-50%);
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #f9585a;
+  font-size: 16px;
+  z-index: 5;
+  display: none;
+  line-height: normal;
+}
+.navBarLinkContainer:nth-child(1){
+  top: calc(100vh);
+}
+.navBarLinkContainer:nth-child(2){
+  top: calc(100vh - 70px);
+}
+.navBarLinkContainer:nth-child(3){
+  top: calc(100vh - 140px);
+}
+.navBarLinkContainer:nth-child(4){
+  top: calc(100vh - 210px);
+}
+.navBarLinkContainer:nth-child(5){
+  top: calc(100vh - 280px);
+}
+.navBarLinkContainer:nth-child(6){
+  top: calc(100vh - 350px);
+}
+.navBarLinkContainer:nth-child(7){
+  top: calc(100vh - 420px);
+}

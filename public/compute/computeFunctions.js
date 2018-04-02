@@ -32,13 +32,15 @@ function fadeIn(element) {
   }, 500)
 }
 
+// INTRO END
+
 function systemCompute(mod) {
   if (true) {
     money += manualSystemComputeRate;
     var displayMoney = money
     displayMoney = Math.round(money * 100) / 100
     $('#money').html('Money: ' + displayMoney)
-    
+
     computeCompletes++
     if (computeCompletes == 0) {
      $('#systemComputeComplete').css('background-color',"#f64c4d")
@@ -93,7 +95,6 @@ function updateVariablesTenthSecond() {
   if(upgradeModuleActive == true){
     $('#research').css('display','block')
     $('#upgradeModuleDiv').css('display','none')
-    console.log(upgradeModuleActive + 'True');
   } else {
     $('#research').css('display','none')
     $('#purchaseUpgradeModule').html('Research MOD')
@@ -115,6 +116,14 @@ function updateVariablesTenthSecond() {
   computationRateUpgradePrice = Math.round(computationRateUpgradePrice * 100) / 100
   $('#computationRateUpgradePrice').html('$' + computationRateUpgradePrice)
 
+  research = Math.round(research * 100) / 100
+  $('#researchResource').html('Research: ' + research)
+
+  if(computeInstanceModActiveResearch) {
+    $('#purchaseComputationInstanceDiv').css('display','block')
+  } else {
+    $('#purchaseComputationInstanceDiv').css('display','none')
+  }
 
 }
 
@@ -137,5 +146,7 @@ function saveVariables() {
   localStorage.setItem('computationRateUpgrade',computationRateUpgrade)
   localStorage.setItem('computationRateUpgradePrice',computationRateUpgradePrice)
   localStorage.setItem('upgradeModuleActive',upgradeModuleActive)
+  localStorage.setItem('research',research)
+  localStorage.setItem('computeInstanceModActiveResearch',computeInstanceModActiveResearch)
 
 }
