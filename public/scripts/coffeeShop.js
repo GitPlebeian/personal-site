@@ -1,4 +1,3 @@
-$(document).ready(function() {
   var navbarInterval = 0;
 
   var child = 1
@@ -6,14 +5,19 @@ $(document).ready(function() {
       setTimeout(function() {
         $('.navBarLinkContainer:nth-child(' + child + ')').animate({
           top: '0px',
-          height: '70px',
-          lineHeight: '70px'
-        },860,'easeInOutCubic')
+          height: '60px',
+          lineHeight: '60px'
+        },600,'easeInOutCubic')
         child++
       },navbarInterval)
 
-      navbarInterval += 100
+      navbarInterval += 90
   }
+
+  setTimeout(function() {
+    $('head').append('<style>.introText p:before{width:100%;}</style>');
+  }, 200)
+
 
   $('.navbarLinkMod').mouseenter(function() {
     var p = $('.navBarLinkContainer:nth-child(' + this.getAttribute("child") + ') p')
@@ -21,41 +25,43 @@ $(document).ready(function() {
 
     $(this).css('border-radius','0 4px 4px 0')
     $(this).animate({
-      width: '77px'
+      width: '67px'
     },80)
 
     p.css('display','block')
     p.animate({
-      left: '83px'
-    },100,'easeInOutQuad')
+      left: '74px'
+    },90)
   })
 
   $('.navbarLinkMod').mouseleave(function() {
     var p = $('.navBarLinkContainer:nth-child(' + this.getAttribute("child") + ') p')
     $(this).css('border-radius','0px')
     $(this).animate({
-      width: '70px'
+      width: '60px'
     },80)
 
     p.animate({
-         left: '-20px'
-    },100,)
+         left: '-18px'
+    },90)
   })
+  $('.navbarLinkMod').mousedown(function() {
+    var p = $('.navBarLinkContainer:nth-child(' + this.getAttribute("child") + ') p')
+    $(this).animate({
+      width: '72px'
+    },50)
 
-  // $('.navBarLinkContainer').mouseenter(function() {
-  //   var p = $('.' + this.className + " p")
-  //
-  //   p.css('display','block')
-  //   p.animate({
-  //     left: '83px'
-  //   },100,'easeOutBack')
-  // })
-  // $('.navBarLinkContainer').mouseleave(function() {
-  //   var p = $('.' + this.className + " p")
-  //
-  //   p.animate({
-  //     left: '0px'
-  //   },100,'easeInOutCubic')
-  //
-  // })
-})
+    p.animate({
+         left: '84px'
+    },50)
+  })
+  $('.navbarLinkMod').mouseup(function() {
+    var p = $('.navBarLinkContainer:nth-child(' + this.getAttribute("child") + ') p')
+    $(this).animate({
+      width: '67px'
+    },50)
+
+    p.animate({
+         left: '74px'
+    },50)
+  })

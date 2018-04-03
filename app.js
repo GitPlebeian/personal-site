@@ -49,9 +49,6 @@ app.get("/websites/flower", function(req,res){
 app.get("/websites/glass", function(req,res){
 	res.render("websites/glass.ejs");
 });
-app.get("/websites/compute", function(req,res){
-	res.render("websites/compute.ejs");
-});
 app.get("/websites/coffeeShop", function(req,res){
 	res.render("websites/coffeeShop");
 });
