@@ -94,21 +94,21 @@ $('.mobileNavBarToggleDiv').click(function() {
     navbar.css('display','block')
     content.animate({
       left: '40%'
-    }, 250)
+    }, 200)
 
     navbar.animate({
       left: '0'
-    }, 220)
+    }, 180)
   } else {
     content.animate({
       left: '0'
-    }, 250)
+    }, 200)
     navbar.animate({
       left: '-40%'
-    }, 250)
+    }, 200)
     setTimeout(function() {
       navbar.css('display','none')
-    },250)
+    },200)
   }
 
 })
@@ -119,15 +119,15 @@ $('.content').click(function() {
     navbar = $('.mobileNavBar')
     content = $('.content')
     navbar.toggleClass('active')
-    
+
     content.animate({
       left: '0'
-    }, 250)
+    }, 200)
     navbar.animate({
       left: '-40%'
-    }, 250)
+    }, 200)
     setTimeout(function() {
       navbar.css('display','none')
-    },250)
+    },200)
   }
 })
