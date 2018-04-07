@@ -1,16 +1,30 @@
 {
-  "name": "personal-site",
+  "name": "personalsite",
   "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
     "ejs": "^2.5.7",
     "express": "^4.16.3",
     "forever": "^0.15.3",
     "fs": "0.0.1-security",
     "nodemailer": "^4.6.3",
     "sendgrid": "^5.2.3",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "tough-cookie": "^2.3.4"
   },
   "scripts": {
     "start": "node app.js"
   },
-  "version": ""
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitPlebeian/personal-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitPlebeian/personal-site/issues"
+  },
+  "homepage": "https://github.com/GitPlebeian/personal-site#readme",
+  "description": ""
 }
