@@ -3,5 +3,5 @@ function navBar(){
   navBarUL = $('.navBarUL')
 
   navBarToggle.toggleClass("active")
-  // navBarUL.toggleClass('active')
+  navBarUL.toggleClass('active')
 }
