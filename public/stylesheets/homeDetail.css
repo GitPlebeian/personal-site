@@ -6,15 +6,32 @@ body{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-size: 19px;
+  color: #212121;
 }
+h1,h2,h3,h4,h5,h6{
+  font-weight: 300;
+}
+hr{
+  border: 1px solid #af7f53;
+}
+.themedContainer{
+  padding: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #aaa;
+  border-radius: 4px;
+}
+/* NAVBAR */
 .navBar {
-  background-color: #444;
+  background-color: #fff;
   width: 100%;
-  overflow: auto;
   font-size: 20px;
-  padding: 10px 10%;
+  padding: 15px 10%;
   box-sizing: border-box;
-  overflow: hidden;
+  box-shadow: 0 0 7px #777;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 .navBarLogoText{
   display: none;
@@ -27,28 +44,86 @@ body{
 .navBar li{
   list-style-type: none;
   display: inline;
-  padding: 0 10px;
+  padding: 0;
 }
 .navBar a{
   text-decoration: none;
+  color: #cf9f73;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  position: relative;
+}
+.navBar a:first-child{
+  margin-left: 0;
+}
+.navBar a::before{
+  content: "";
+  border-top: 2px solid #cf9f73;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  transition: 0.25s;
+}
+.navBar a:hover::before{
+  width: 100%;
+}
+/* NAVBAR NAVBAR NAVBAR */
+/* ///////////////////////////////////////////////////// */
+/* CONTENT */
+.accordian .accordianToggle{
+  width: 100%;
+  background-color: #ddd;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.accordian .accordianToggle p{
+  margin: 0;
+  color: #af7f53;
+}
+.accordianContent{
+  background-color: #eee;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ;
+}
+.content{
+  padding: 0 10%;
+  padding-top: calc(54px + 2.5%);
+  overflow: hidden;
+}
+/* /////////// */
+/* Intro Image */
+img{
+  vertical-align: middle;
+}
+.introImg{
+  width: 100%;
+  position: relative;
+}
+.introImg p{
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 80px;
   color: white;
-  letter-spacing: 1.2px;
+  width: 100%;
+  text-align: center;
 }
-.navBar a:hover{
-  border-bottom: 2px solid #ccc;
-  color: #ccc;
-}
-
-
+/* ///////// */
 .container{
   margin-left: 2.5%;
   margin-right: 2.5%;
 }
 .col{
-    float: left;
-    margin-left: 4%;
-    margin-bottom: 2.5%;
-    box-sizing: border-box;
+  float: left;
+  margin-left: 4%;
+  margin-bottom: 2.5%;
+  box-sizing: border-box;
+}
+.noMarginBottom{
+  margin-bottom: 0;
 }
 @media (min-width: 993px){
   .lg-1 {width: 4.66666%;}
@@ -104,8 +179,94 @@ body{
   .md-12-nl {width: 100%; margin-left: 0%;}
 }
 @media (max-width: 768px ) and (min-width: 577px) {
+  body{
+    font-size: 18px;
+  }
   .navBar{
-    padding: 10px 2.5%;
+    padding: 0;
+  }
+  .navBar ul{
+    height: 0;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+  }
+  .navBar ul.active{
+    height: 270px;
+  }
+  .navBar ul li{
+    display: block;
+    height: 45px;
+  }
+  .navBar ul li a{
+    display: block;
+    line-height: 45px;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0px;
+    padding-left: 2.5%;
+  }
+  .navBar a::before{
+    border: none;
+  }
+  .navBar ul.active li:hover{
+    background-color: white;
+    color: black;
+  }
+  .navBar ul.active li:hover a{
+    color: black;
+  }
+  .navBarLogoText{
+    display: block;
+    float: left;
+    font-size: 27px;
+    color: white;
+    width: calc(100% - 45px);
+    line-height: 50px;
+    padding-left: 2.5%;
+    box-sizing:border-box;
+  }
+  .navBarLogoText a{
+    margin: 0;
+  }
+  .navBarToggle{
+    height: 50px;
+    width: 45px;
+    float: left;
+    padding: 15.5px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .navBarTogglePart{
+    background-color: #cf9f73;
+    width: 25px;
+    height: 1px;
+    position: relative;
+    transition: 0.3s;
+  }
+  .navBarTogglePart:nth-child(1){
+    margin-bottom: 8px;
+  }
+  .navBarTogglePart:nth-child(2){
+    margin-bottom: 8px;
+  }
+  .active .navBarTogglePart:nth-child(1){
+    -webkit-transform: rotate(50deg) translate(0,0);
+    transform: translate(0,9px) rotate(-135deg);
+  }
+  .active .navBarTogglePart:nth-child(2){
+    transform: translate(35px,0)
+  }
+  .active .navBarTogglePart:nth-child(3){
+    -webkit-transform: rotate(50deg) translate(0,0);
+    transform: translate(0,-9px) rotate(135deg);
+  }
+  .content{
+    margin: 0;
+    padding: 0 2.5%;
+    padding-top: calc(50px + 2.5%);
+    /* height: 800px; */
+    /* overflow-x: ; */
   }
   .sm-1 {width: 4.66666%;}
   .sm-2 {width: 13.33333%;}
@@ -138,7 +299,19 @@ body{
     width: 100%;
     margin-left: 0px;
   }
-
+  body{
+    font-size: 16px;
+  }
+  /* ImgPullOut */
+  .content{
+    margin: 0;
+    padding: 0 2.5%;
+    padding-top: calc(50px + 2.5%);
+  }
+  .noMobile{
+    display: none;
+  }
+  /* NAVBAR */
   .navBar{
     padding: 0;
   }
@@ -149,15 +322,22 @@ body{
     width: 100%;
   }
   .navBar ul.active{
-    height: 224px;
+    height: 270px;
   }
   .navBar ul li{
     display: block;
-    padding: 10px 0;
-    text-align: center;
+    height: 45px;
   }
-  .navBar ul li:last-child{
-    padding-bottom: 14px;
+  .navBar ul li a{
+    display: block;
+    line-height: 45px;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0px;
+    padding-left: 2.5%;
+  }
+  .navBar a::before{
+    border: none;
   }
   .navBar ul.active li:hover{
     background-color: white;
@@ -165,9 +345,6 @@ body{
   }
   .navBar ul.active li:hover a{
     color: black;
-  }
-  .navBar a:hover{
-    border-bottom:none;
   }
   .navBarLogoText{
     display: block;
@@ -179,6 +356,9 @@ body{
     padding-left: 2.5%;
     box-sizing:border-box;
   }
+  .navBarLogoText a{
+    margin: 0;
+  }
   .navBarToggle{
     height: 50px;
     width: 45px;
@@ -188,7 +368,7 @@ body{
     cursor: pointer;
   }
   .navBarTogglePart{
-    background-color: white;
+    background-color: #cf9f73;
     width: 25px;
     height: 1px;
     position: relative;
@@ -211,4 +391,5 @@ body{
     -webkit-transform: rotate(50deg) translate(0,0);
     transform: translate(0,-9px) rotate(135deg);
   }
+  /* //////////////////////////////////// */
 }
