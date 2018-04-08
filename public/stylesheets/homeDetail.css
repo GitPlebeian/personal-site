@@ -209,13 +209,6 @@ img{
   .navBar a::before{
     border: none;
   }
-  .navBar ul.active li:hover{
-    background-color: white;
-    color: black;
-  }
-  .navBar ul.active li:hover a{
-    color: black;
-  }
   .navBarLogoText{
     display: block;
     float: left;
@@ -338,13 +331,6 @@ img{
   }
   .navBar a::before{
     border: none;
-  }
-  .navBar ul.active li:hover{
-    background-color: white;
-    color: black;
-  }
-  .navBar ul.active li:hover a{
-    color: black;
   }
   .navBarLogoText{
     display: block;
