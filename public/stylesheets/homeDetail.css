@@ -36,16 +36,6 @@ hr{
 .navBarLogoText{
   display: none;
 }
-.navBar ul{
-  padding: 0;
-  margin: 0;
-  transition: 0.3s
-}
-.navBar li{
-  list-style-type: none;
-  display: inline;
-  padding: 0;
-}
 .navBar a{
   text-decoration: none;
   color: #cf9f73;
@@ -72,19 +62,25 @@ hr{
 /* CONTENT */
 .accordian .accordianToggle{
   width: 100%;
-  background-color: #ddd;
+  background-color: #f7f7f7;
   padding: 16px;
   box-sizing: border-box;
+  cursor: pointer;
+  z-index: 5;
 }
 .accordian .accordianToggle p{
   margin: 0;
   color: #af7f53;
 }
 .accordianContent{
-  background-color: #eee;
+  background-color: #fff;
+  border: #f7f7f7 0px solid;
+  box-sizing: border-box;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.25s ;
+  padding: 0 8px;
+  z-index: 4;
 }
 .content{
   padding: 0 10%;
@@ -185,20 +181,17 @@ img{
   .navBar{
     padding: 0;
   }
-  .navBar ul{
-    height: 0;
+  .navBar .navBarLinks{
+    max-height: 0;
     overflow: hidden;
     float: left;
     width: 100%;
+    transition: 0.25s;
   }
-  .navBar ul.active{
-    height: 270px;
+  .navBarLinks  a:last-child{
+    padding-bottom: 7px;
   }
-  .navBar ul li{
-    display: block;
-    height: 45px;
-  }
-  .navBar ul li a{
+  .navBar a{
     display: block;
     line-height: 45px;
     width: 100vw;
@@ -209,18 +202,15 @@ img{
   .navBar a::before{
     border: none;
   }
-  .navBarLogoText{
+  .navBar .navBarLogoText{
     display: block;
+    line-height: 50px;
     float: left;
     font-size: 27px;
-    color: white;
     width: calc(100% - 45px);
-    line-height: 50px;
     padding-left: 2.5%;
     box-sizing:border-box;
-  }
-  .navBarLogoText a{
-    margin: 0;
+    line-height: 50px;
   }
   .navBarToggle{
     height: 50px;
@@ -308,20 +298,17 @@ img{
   .navBar{
     padding: 0;
   }
-  .navBar ul{
-    height: 0;
+  .navBar .navBarLinks{
+    max-height: 0;
     overflow: hidden;
     float: left;
     width: 100%;
+    transition: 0.25s;
   }
-  .navBar ul.active{
-    height: 270px;
+  .navBarLinks  a:last-child{
+    padding-bottom: 7px;
   }
-  .navBar ul li{
-    display: block;
-    height: 45px;
-  }
-  .navBar ul li a{
+  .navBar a{
     display: block;
     line-height: 45px;
     width: 100vw;
@@ -332,18 +319,15 @@ img{
   .navBar a::before{
     border: none;
   }
-  .navBarLogoText{
+  .navBar .navBarLogoText{
     display: block;
+    line-height: 50px;
     float: left;
     font-size: 27px;
-    color: white;
     width: calc(100% - 45px);
-    line-height: 50px;
     padding-left: 2.5%;
     box-sizing:border-box;
-  }
-  .navBarLogoText a{
-    margin: 0;
+    line-height: 50px;
   }
   .navBarToggle{
     height: 50px;
