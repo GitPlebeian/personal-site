@@ -62,15 +62,18 @@ hr{
 /* CONTENT */
 .accordian .accordianToggle{
   width: 100%;
-  background-color: #f7f7f7;
+  background-color: #f7f7f7f7;
+  /* background-color: #444; */
   padding: 16px;
   box-sizing: border-box;
   cursor: pointer;
   z-index: 5;
+  position: relative;
 }
 .accordian .accordianToggle p{
   margin: 0;
   color: #af7f53;
+  display: inline-block;
 }
 .accordianContent{
   background-color: #fff;
@@ -82,6 +85,31 @@ hr{
   padding: 0 8px;
   z-index: 4;
 }
+.accordianToggleAnimation{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.accordianToggleAnimationPart{
+  width: 15px;
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: #af7f53;
+  transform: translate(-50%,-50%);
+  transition: 0.25s;
+}
+.accordianToggleAnimationPart:nth-child(1){
+  transform: translate(-7.5px,0) rotate(90deg);
+}
+.accordianToggle.active .accordianToggleAnimationPart:nth-child(1){
+  transform: translate(-50%,-50%);
+}
+/*  */
 .content{
   padding: 0 10%;
   padding-top: calc(54px + 2.5%);
