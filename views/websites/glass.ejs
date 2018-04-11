@@ -13,28 +13,33 @@
     <title>Glass</title>
   </head>
   <body>
-      <div class="navBar" id="navBar">
-        <a href="/" class="main">Home</a>
-        <div class="navIcon" id="navIcon" onclick="navBar(this)">
-          <div class="navIconBar"></div>
-          <div class="navIconBar"></div>
-          <div class="navIconBar"></div>
-        </div>
+    <div class="navBar">
+      <a class="navBarLogoText" href="/websites/homeDetail">HD</a>
+      <div class="navBarToggle" onclick="navBar()">
+        <div class="navBarTogglePart"></div>
+        <div class="navBarTogglePart"></div>
+        <div class="navBarTogglePart"></div>
       </div>
-      <div class="navBarSlideIn" id="navBarSlideInid">
+      <div class="navBarLinks" id="navBarLinks">
+        <a href="/">Home</a>
         <a href="/websites">Websites</a>
         <a href="/contact">Contact</a>
+        <a href="/services">Services</a>
       </div>
+    </div>
       <div class="content" onclick="focusContent()">
       <div class="tempNav container">
-        <div class="link glass col lg-4-nl md-4-nl sm-4-nl noglass">
+        <div class="link glass col lg-3-nl md-3-nl sm-3-nl noglass">
           <a href="/">Home</a>
         </div>
-        <div class="link glass col lg-4 md-4 sm-4 noglass">
+        <div class="link glass col lg-3 md-3 sm-3 noglass">
           <a href="/websites">Websites</a>
         </div>
-        <div class="link glass col lg-4 md-3 sm-4 noglass">
+        <div class="link glass col lg-3 md-3 sm-3 noglass">
           <a href="/contact">Contact</a>
+        </div>
+        <div class="link glass col lg-3 md-3 sm-3 noglass">
+          <a href="/services">Services</a>
         </div>
       </div>
       <div class="realContent container">

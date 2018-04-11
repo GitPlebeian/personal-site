@@ -1,12 +1,3 @@
-$('.btn').click( function(event) {
-  console.log("asdfffdf");
-    $(".btn p").html("Message has been sent!")
-    $("#redirect").html("Redirecting to home")
-    setTimeout( function () {
-        $("form").submit();
-    }, 2000);
-});
-
 function navBar(){
   navBarToggle = $('.navBarToggle')
   obj = document.getElementById("navBarLinks")
@@ -41,9 +32,9 @@ function accordianToggle(thing) {
     obj.css('max-height','0')
     setTimeout(function(){
       obj.css('border-width','0px')
-    },205)
+    },175)
   } else {
-    obj.css('border-width','1px')
+    obj.css('border-width','2px')
     things.style.maxHeight = things.scrollHeight + 'px'
   }
 }

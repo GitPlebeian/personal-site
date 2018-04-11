@@ -4,6 +4,25 @@ body{
   padding: 0px;
   box-sizing: border-box;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f9585a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #e9484a;
+}
 div{
   display: block;
   overflow: hidden;
@@ -13,6 +32,10 @@ h1,h2,h3,h4,h5,h6{
 }
 ul{
   padding-left: 30px;
+}
+.footer{
+  text-align: center;
+  font-size: 17px;
 }
 .link{
   text-align: center;
@@ -26,11 +49,11 @@ ul{
   background: transparent;
 }
 .intro{
-  margin-left: 8%;
+  margin-left: 10%;
   margin-top: 100px;
 }
 .introMain{
-  color: #40515c;
+  color: #444;
   font-size: 60px;
   font-weight: 300;
 }
@@ -71,7 +94,7 @@ ul{
 }
 .content{
   padding-top: 2.5%;
-  background-color: #5b5b5b;
+  background-color: #e2e2e2;
 }
 .container{
   margin-left: 2.5%;
@@ -83,82 +106,40 @@ ul{
   margin-left: 4%;
   margin-bottom: 2.5%;
 }
-.navBar{
-  z-index: 10;
+.navBar {
+  background-color: #e2e2e2;
+  width: 100%;
   font-size: 20px;
-  overflow: hidden;
+  padding: 15px 10%;
+  box-sizing: border-box;
+  box-shadow: 0 0 4px #666;
   position: fixed;
   top: 0;
-  width: 100%;
-  box-shadow:0px 2px 5px rgba(0,0,0,0.2);
-  background-color: #e1e1e1;
-  color: #40515c;
+  z-index: 100;
 }
-.navBar a.main{
-  background-color:  #e1e1e1;
+.navBarLogoText{
+  display: none;
 }
 .navBar a{
   text-decoration: none;
-  float: left;
-  text-align: center;
-  padding: 14px 16px;
-  color: inherit;
+  color: #444;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  position: relative;
 }
-.navBar a:hover{
-  color: #000;
-  background-color: #fff;
+.navBar a:first-child{
+  margin-left: 0;
 }
-.navBar a.main:hover{
-  background-color: #fff;
-}
-.navIcon{
-  width: 50px;
-  height: 52px;
-  display: none;
-  cursor: pointer;
-}
-.navIconBar{
-  width: 25px;
-  height: 1px;
-  background-color: #40515c;
-  margin: 7px 12.5px;
+.navBar a::before{
+  content: "";
+  border-top: 2px solid #f9585a;
+  width: 0;
+  position: absolute;
+  bottom: 0;
   transition: 0.25s;
 }
-.navIconBarActive .navIconBar{
-  background-color: red;
-}
-.navIconBar:nth-child(1){
-  margin-top: 17px;
-}
-.navIconBarActive .navIconBar:nth-child(1){
-  -webkit-transform: rotate(-45deg) translate(0, 0);
-  transform: rotate(45deg) translate(6px,5px);
-}
-.navIconBarActive .navIconBar:nth-child(2){
-  opacity: 0;
-}
-.navIconBarActive .navIconBar:nth-child(3){
-  -webkit-transform: rotate(50deg) translate(0,0);
-  transform: rotate(-45deg) translate(6px, -5px);
-}
-.navBarSlideIn{
-  z-index: 9;
-  font-size: 20px;
-  overflow: hidden;
-  position: fixed;
-  top: -68px;
+.navBar a:hover::before{
   width: 100%;
-  background-color: #e1e1e1;
-}
-.navBarSlideIn a{
-  text-decoration: none;
-  padding: 14px 16px;
-  color: #40515c;
-  display: block;
-}
-.navBarSlideIn a:hover{
-  background-color: white;
-  color: black;
 }
 @media (min-width: 1215px){
   .container{
@@ -200,6 +181,10 @@ ul{
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
+  .navBar{
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
   .md-1 {width: 4.66666%;}
   .md-2 {width: 13.33333%;}
   .md-3 {width: 22%;}
@@ -234,7 +219,10 @@ ul{
   .contentBox{
     font-size: 22px;
   }
-
+  .navBar{
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
   .sm-1 {width: 4.66666%;}
   .sm-2 {width: 13.33333%;}
   .sm-3 {width: 22%;}
@@ -266,29 +254,6 @@ ul{
     width: 100%;
     margin-left: 0px;
   }
-  .navBarSlideIn.navBarSlideInActive{
-    box-shadow:0px 2px 5px rgba(0,0,0,0.2);
-  }
-  .navBar.responsive{
-    box-shadow: none;
-  }
-  .navBar a:not(.main) {
-    display: none;
-  }
-  .navBar .navIcon {
-    float: right;
-    display: inline-block;
-  }
-  .navBar.responsive .navIcon{
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navBar.responsive a.main{
-    float: none;
-    display: block;
-    text-align: left;
-  }
   .mainContent{
     font-size: 18px;
   }
@@ -302,5 +267,68 @@ ul{
   .introP{
     font-size: 30px;
     font-weight: 300;
+  }
+  .navBar{
+    padding: 0;
+  }
+  .navBar .navBarLinks{
+    max-height: 0;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    transition: 0.25s;
+  }
+  .navBar a{
+    display: block;
+    line-height: 45px;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0px;
+    padding-left: 2.5%;
+  }
+  .navBar a::before{
+    border: none;
+  }
+  .navBar .navBarLogoText{
+    display: block;
+    line-height: 50px;
+    float: left;
+    font-size: 27px;
+    width: calc(100% - 45px);
+    padding-left: 2.5%;
+    box-sizing:border-box;
+    line-height: 50px;
+  }
+  .navBarToggle{
+    height: 50px;
+    width: 45px;
+    float: left;
+    padding: 15.5px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .navBarTogglePart{
+    background-color: #444;
+    width: 25px;
+    height: 1px;
+    position: relative;
+    transition: 0.3s;
+  }
+  .navBarTogglePart:nth-child(1){
+    margin-bottom: 8px;
+  }
+  .navBarTogglePart:nth-child(2){
+    margin-bottom: 8px;
+  }
+  .active .navBarTogglePart:nth-child(1){
+    -webkit-transform: rotate(50deg) translate(0,0);
+    transform: translate(0,9px) rotate(-135deg);
+  }
+  .active .navBarTogglePart:nth-child(2){
+    transform: translate(35px,0)
+  }
+  .active .navBarTogglePart:nth-child(3){
+    -webkit-transform: rotate(50deg) translate(0,0);
+    transform: translate(0,-9px) rotate(135deg);
   }
 }

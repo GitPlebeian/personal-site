@@ -5,6 +5,25 @@ body{
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fb5096;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fb5096;
+}
 h1,h2,h3,h4,h5,h6{
   font-weight: normal;
 }
@@ -85,7 +104,6 @@ h1,h2,h3,h4,h5,h6{
   bottom: 0;
   right: 0;
   background: inherit;
-  /* box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2); */
   filter: blur(12px);
 }
 .frostedGlassText h1, .frostedGlassText p {
@@ -107,84 +125,41 @@ h1,h2,h3,h4,h5,h6{
   margin: 0px;
 }
 .content{
-  margin-top: 52px;
+  margin-top: 50px;
 }
 /* NavBar style 1 Stuff */
-.navBar{
-  z-index: 10;
+.navBar {
+  background-color: #fb5096;
+  width: 100%;
   font-size: 20px;
-  overflow: hidden;
+  padding: 15px 2.5%;
+  box-sizing: border-box;
+  box-shadow: 0 0 4px #000;
   position: fixed;
   top: 0;
-  width: 100%;
-  box-shadow:0px 2px 5px rgba(0,0,0,0.2);
-  background-color: #fff;
-  color: #fb5096;
+  z-index: 100;
 }
-.navBar a.main{
-  background-color:  #fa6fa5;
-  color: white;
+.navBarLogoText{
+  display: none;
 }
 .navBar a{
   text-decoration: none;
-  float: left;
-  text-align: center;
-  padding: 14px 16px;
-  color: inherit;
+  color: #fff;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  position: relative;
 }
-.navBar a:hover{
-  color: #000;
-  background-color: #fff;
+.navBar a:first-child{
+  margin-left: 0;
 }
-.navBar a.main:hover{
-  background-color: #fff;
-}
-.navIcon{
-  width: 50px;
-  height: 52px;
-  display: none;
-  cursor: pointer;
-}
-.navIconBar{
-  width: 25px;
-  height: 1px;
-  background-color: #fb5096;
-  margin: 7px 12.5px;
+.navBar a::before{
+  content: "";
+  border-top: 2px solid #fff;
+  width: 0;
+  position: absolute;
+  bottom: 0;
   transition: 0.25s;
 }
-.navIconBarActive .navIconBar{
-  background-color: white;
-}
-.navIconBar:nth-child(1){
-  margin-top: 17px;
-}
-.navIconBarActive .navIconBar:nth-child(1){
-  -webkit-transform: rotate(-45deg) translate(0, 0);
-  transform: rotate(45deg) translate(6px,5px);
-}
-.navIconBarActive .navIconBar:nth-child(2){
-  opacity: 0;
-}
-.navIconBarActive .navIconBar:nth-child(3){
-  -webkit-transform: rotate(50deg) translate(0,0);
-  transform: rotate(-45deg) translate(6px, -5px);
-}
-.navBarSlideIn{
-  z-index: 9;
-  font-size: 20px;
-  overflow: hidden;
-  position: fixed;
-  top: -68px;
+.navBar a:hover::before{
   width: 100%;
-  background-color: #fb5096;
-}
-.navBarSlideIn a{
-  text-decoration: none;
-  padding: 14px 16px;
-  color: white;
-  display: block;
-}
-.navBarSlideIn a:hover{
-  background-color: white;
-  color: black;
 }

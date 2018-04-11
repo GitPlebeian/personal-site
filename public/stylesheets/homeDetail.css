@@ -12,14 +12,36 @@ body{
 h1,h2,h3,h4,h5,h6{
   font-weight: 300;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #cf9f73;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #cf9f73;
+}
 hr{
   border: 1px solid #af7f53;
 }
 .themedContainer{
   padding: 8px;
   border: 1px solid #ccc;
-  box-shadow: 0 0 5px #aaa;
+  box-shadow: 0 0 7px #bbb;
   border-radius: 4px;
+}
+.onlyMobile{
+  display: none;
 }
 /* NAVBAR */
 .navBar {
@@ -28,7 +50,7 @@ hr{
   font-size: 20px;
   padding: 15px 10%;
   box-sizing: border-box;
-  box-shadow: 0 0 7px #777;
+  box-shadow: 0 0 4px #888;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -321,6 +343,9 @@ img{
   }
   .noMobile{
     display: none;
+  }
+  .onlyMobile{
+    display: block;
   }
   /* NAVBAR */
   .navBar{

@@ -30,6 +30,9 @@ app.get("/websites", function(req,res){
 app.get("/contact", function(req,res){
 	res.render("contact");
 });
+app.get("/services", function(req,res){
+	res.render("services");
+});
 app.post("/contact", function(req,res){
 	console.log("Sending Email");
 	const msg = {

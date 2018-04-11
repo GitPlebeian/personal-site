@@ -1,14 +1,15 @@
 body{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  background-image: url("/images/glass2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  color: white;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: 300;
+}
+hr{
+  border: solid 1px #333;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -22,66 +23,36 @@ body{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #40515c;
+    background: #f9585a;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #40515c;
+    background: #e9484a;
 }
-body,html{
-  /* overflow: auto; */
-  /* -webkit-overflow-scrolling: touch; */
-}
-h1,h2,h3,h4,h5,h6{
-  font-weight: 300;
-}
-a{
-  text-decoration: none;
-  color: inherit;
-}
-hr{
-  border: solid 1px white;
-}
-.content{
-  max-width: 900px;
-  margin: 0 auto;
-  margin-top: calc(52px + 2.5%);
-  position: relative;
-  overflow: hidden;
-}
-.link{
-  float: left;
-  text-align: center;
-  padding: 14px 16px;
-}
-.link a{
-  transition: .1s;
-  position: relative;
-  top: 0px;
-}
-.link a:hover{
-  border-bottom: 3px solid white;
-  top: -3px;
+.themedContainer{
+  border-radius: 4px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 7px #bbb;
 }
 .navBar {
-  background-color: #40515c;
+  background-color: #fff;
   width: 100%;
   font-size: 20px;
-  padding: 15px 2.5%;
+  padding: 15px 20%;
   box-sizing: border-box;
-  box-shadow: 0 0 4px #000;
+  box-shadow: 0 0 4px #888;
   position: fixed;
   top: 0;
   z-index: 100;
-  display: none;
 }
 .navBarLogoText{
   display: none;
 }
 .navBar a{
   text-decoration: none;
-  color: #fff;
+  color: #333;
   letter-spacing: 1px;
   margin: 0 10px;
   position: relative;
@@ -91,7 +62,7 @@ hr{
 }
 .navBar a::before{
   content: "";
-  border-top: 2px solid #fff;
+  border-top: 2px solid #f64c4d;
   width: 0;
   position: absolute;
   bottom: 0;
@@ -100,63 +71,72 @@ hr{
 .navBar a:hover::before{
   width: 100%;
 }
-.glass{
-  font-size: 20px;
-  padding: 14px 16px;
-  z-index: 1;
-  background-image: url("/images/glass2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-}
-.glass::before{
-  z-index: -1;
-  width: 200%;
-  height: 200%;
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  bottom: 0;
-  right: 0;
-  background: inherit;
-  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
-  filter: blur(24px);
-}
-.scrollTop{
+.accordian .accordianToggle{
+  width: 100%;
+  background-color: #f7f7f7f7;
+  /* background-color: #444; */
+  padding: 16px;
+  box-sizing: border-box;
   cursor: pointer;
   z-index: 5;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: white;
-  color: black;
-  text-align: center;
-  transition: .3s;
-  opacity: 0;
-}
-.scrollTop P{
   position: relative;
-  top: 34%;
-  margin: 0px;
+}
+.accordian .accordianToggle p{
+  margin: 0;
+  color: #212121;
+  display: inline-block;
+}
+.accordianContent{
+  background-color: #fff;
+  border: #f7f7f7 0px solid;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ;
+  padding: 0 8px;
+  z-index: 4;
+}
+.accordianToggleAnimation{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.accordianToggleAnimationPart{
+  width: 15px;
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: #212121;
+  transform: translate(-50%,-50%);
+  transition: 0.25s;
+}
+.accordianToggleAnimationPart:nth-child(1){
+  transform: translate(-7.5px,0) rotate(90deg);
+}
+.accordianToggle.active .accordianToggleAnimationPart:nth-child(1){
+  transform: translate(-50%,-50%);
+}
+.content {
+  padding: 0 20%;
+  padding-top: calc(54px + 2.5%);
+  overflow: hidden;
 }
 .container{
   margin-left: 2.5%;
   margin-right: 2.5%;
-  overflow: auto;
 }
 .col{
-    float: left;
-    margin-left: 4%;
-    margin-bottom: 2.5%;
-    box-sizing: border-box;
+  float: left;
+  margin-left: 4%;
+  margin-bottom: 2.5%;
+  box-sizing: border-box;
+}
+.noMarginBottom{
+  margin-bottom: 0;
 }
 @media (min-width: 993px){
   .lg-1 {width: 4.66666%;}
@@ -171,6 +151,7 @@ hr{
   .lg-10 {width: 82.66666%;}
   .lg-11 {width: 91.33333%;}
   .lg-12 {width: 100%;}
+
   .lg-1-nl {width: 4.66666%; margin-left: 0px;}
   .lg-2-nl {width: 13.33333%; margin-left: 0px;}
   .lg-3-nl {width: 22%; margin-left: 0px;}
@@ -184,7 +165,8 @@ hr{
   .lg-11-nl {width: 91.33333%; margin-left: 0px;}
   .lg-12-nl {width: 100%;  margin-left: 0px;}
 }
-@media (max-width: 992px) and (min-width: 769px) {
+
+@media (max-width: 992px) and (min-width: 768px) {
   .md-1 {width: 4.66666%;}
   .md-2 {width: 13.33333%;}
   .md-3 {width: 22%;}
@@ -211,9 +193,14 @@ hr{
   .md-11-nl {width: 91.33333%; margin-left: 0px;}
   .md-12-nl {width: 100%; margin-left: 0%;}
 }
-@media (max-width: 768px ) and (min-width: 577px) {
-  .glass{
-    font-size: 17px;
+
+@media (max-width: 768px ) and (min-width: 576px) {
+  .navBar{
+    padding: 15px 10%;
+  }
+  .content{
+    padding-left: 10%;
+    padding-right: 10%;
   }
   .sm-1 {width: 4.66666%;}
   .sm-2 {width: 13.33333%;}
@@ -241,31 +228,21 @@ hr{
   .sm-11-nl {width: 91.33333%; margin-left: 0px;}
   .sm-12-nl {width: 100%; margin-left: 0px;}
 }
-@media (max-width: 577px) {
-  .tempNav{
-    display: none;
-  }
+@media (max-width: 576px) {
   div[class*="col"]{
     width: 100%;
     margin-left: 0px;
   }
-  .glass{
+  body{
     font-size: 16px;
-    background-color: #40515c;
-    background-image: none;
   }
-  .glass::before{
-    background: none;
-    width: 0px;
-    height: 0px;
-    box-shadow: none;
-    filter: none;
-  }
-  .content{
+  .content {
+    padding: 0 2.5%;
+    padding-top: calc(50px + 2.5%);
+    overflow: hidden;
   }
   .navBar{
     padding: 0;
-    display: block;
   }
   .navBar .navBarLinks{
     max-height: 0;
@@ -304,7 +281,7 @@ hr{
     cursor: pointer;
   }
   .navBarTogglePart{
-    background-color: #fff;
+    background-color: #333;
     width: 25px;
     height: 1px;
     position: relative;

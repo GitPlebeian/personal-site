@@ -149,27 +149,67 @@
     width: 100%;
     margin-left: 0px;
   }
-  .navBarSlideIn.navBarSlideInActive{
-    box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+  .navBar{
+    padding: 0;
   }
-  .navBar.responsive{
-    box-shadow: none;
+  .navBar .navBarLinks{
+    max-height: 0;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    transition: 0.25s;
   }
-  .navBar a:not(.main) {
-    display: none;
-  }
-  .navBar .navIcon {
-    float: right;
-    display: inline-block;
-  }
-  .navBar.responsive .navIcon{
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navBar.responsive a.main{
-    float: none;
+  .navBar a{
     display: block;
-    text-align: left;
+    line-height: 45px;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0px;
+    padding-left: 2.5%;
+  }
+  .navBar a::before{
+    border: none;
+  }
+  .navBar .navBarLogoText{
+    display: block;
+    line-height: 50px;
+    float: left;
+    font-size: 27px;
+    width: calc(100% - 45px);
+    padding-left: 2.5%;
+    box-sizing:border-box;
+    line-height: 50px;
+  }
+  .navBarToggle{
+    height: 50px;
+    width: 45px;
+    float: left;
+    padding: 15.5px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .navBarTogglePart{
+    background-color: #fff;
+    width: 25px;
+    height: 1px;
+    position: relative;
+    transition: 0.3s;
+  }
+  .navBarTogglePart:nth-child(1){
+    margin-bottom: 8px;
+  }
+  .navBarTogglePart:nth-child(2){
+    margin-bottom: 8px;
+  }
+  .active .navBarTogglePart:nth-child(1){
+    -webkit-transform: rotate(50deg) translate(0,0);
+    transform: translate(0,9px) rotate(-135deg);
+  }
+  .active .navBarTogglePart:nth-child(2){
+    transform: translate(35px,0)
+  }
+  .active .navBarTogglePart:nth-child(3){
+    -webkit-transform: rotate(50deg) translate(0,0);
+    transform: translate(0,-9px) rotate(135deg);
   }
 }

@@ -7,7 +7,7 @@ body{
   padding: 0px;
   box-sizing: border-box;
   /* overflow: hidden; */
-  background-color: #5b5b5b;
+  /* background-color: #5b5b5b; */
 }
 .form{
   display: block;
@@ -16,13 +16,13 @@ body{
 form{
   /* box-shadow:  */
   box-sizing: border-box;
-  padding: 2.5%;
+  padding: 20px;
   position: absolute;
   top: 72px;
   left: 50%;
   transform: translate(-50%,0%);
   background-color: #f64c4d;
-  border-radius: 15px;
+  border-radius: 4px;
 }
 input{
   font-family: 'Roboto', sans-serif;
@@ -70,83 +70,43 @@ label{
 .content{
   /* margin-top: 52px; */
 }
-.navBar{
-  z-index: 10;
+.navBar {
+  background-color: #fff;
+  max-width: 552px;
+  width: 100%;
   font-size: 20px;
-  overflow: hidden;
+  padding: 15px 0;
+  box-sizing: border-box;
+  /* box-shadow: 0 0 4px #444; */
   position: fixed;
   top: 0;
-  width: 100%;
-  box-shadow:0px 2px 5px rgba(0,0,0,0.2);
-  background-color: #f64c4d;
-  color: white;
+  left: 50%;
+  transform: translate(-50%,0);
+  z-index: 100;
 }
-.navBar a.main{
-  /* background-color: #e1e1e1; */
-  /* color: #40515c; */
+.navBarLogoText{
+  display: none;
 }
 .navBar a{
   text-decoration: none;
-  float: left;
-  text-align: center;
-  padding: 14px 16px;
-  color: inherit;
+  color: #444;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  position: relative;
 }
-.navBar a:hover{
-  color: #000;
-  background-color: #fff;
+.navBar a:first-child{
+  margin-left: 0;
 }
-.navBar a.main:hover{
-  background-color: #fff;
-}
-.navIcon{
-  width: 50px;
-  height: 52px;
-  display: none;
-  cursor: pointer;
-}
-.navIconBar{
-  width: 25px;
-  height: 1px;
-  background-color: #fff;
-  margin: 7px 12.5px;
+.navBar a::before{
+  content: "";
+  border-top: 2px solid #f9585a;
+  width: 0;
+  position: absolute;
+  bottom: 0;
   transition: 0.25s;
 }
-.navIconBarActive .navIconBar{
-  background-color: white;
-}
-.navIconBar:nth-child(1){
-  margin-top: 17px;
-}
-.navIconBarActive .navIconBar:nth-child(1){
-  -webkit-transform: rotate(-45deg) translate(0, 0);
-  transform: rotate(45deg) translate(6px,5px);
-}
-.navIconBarActive .navIconBar:nth-child(2){
-  opacity: 0;
-}
-.navIconBarActive .navIconBar:nth-child(3){
-  -webkit-transform: rotate(50deg) translate(0,0);
-  transform: rotate(-45deg) translate(6px, -5px);
-}
-.navBarSlideIn{
-  z-index: 9;
-  font-size: 20px;
-  overflow: hidden;
-  position: fixed;
-  top: -68px;
+.navBar a:hover::before{
   width: 100%;
-  background-color: #f64c4d;
-}
-.navBarSlideIn a{
-  text-decoration: none;
-  padding: 14px 16px;
-  color: white;
-  display: block;
-}
-.navBarSlideIn a:hover{
-  background-color: white;
-  color: black;
 }
 .container{
   margin-left: 2.5%;
@@ -264,27 +224,67 @@ label{
     width: 100%;
     margin-left: 0px;
   }
-  .navBarSlideIn.navBarSlideInActive{
-    box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+  .navBar{
+    padding: 0;
   }
-  .navBar.responsive{
-    box-shadow: none;
+  .navBar .navBarLinks{
+    max-height: 0;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    transition: 0.25s;
   }
-  .navBar a:not(.main) {
-    display: none;
-  }
-  .navBar .navIcon {
-    float: right;
-    display: inline-block;
-  }
-  .navBar.responsive .navIcon{
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navBar.responsive a.main{
-    float: none;
+  .navBar a{
     display: block;
-    text-align: left;
+    line-height: 45px;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0px;
+    padding-left: 2.5%;
+  }
+  .navBar a::before{
+    border: none;
+  }
+  .navBar .navBarLogoText{
+    display: block;
+    line-height: 50px;
+    float: left;
+    font-size: 27px;
+    width: calc(100% - 45px);
+    padding-left: 2.5%;
+    box-sizing:border-box;
+    line-height: 50px;
+  }
+  .navBarToggle{
+    height: 50px;
+    width: 45px;
+    float: left;
+    padding: 15.5px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .navBarTogglePart{
+    background-color: #444;
+    width: 25px;
+    height: 1px;
+    position: relative;
+    transition: 0.3s;
+  }
+  .navBarTogglePart:nth-child(1){
+    margin-bottom: 8px;
+  }
+  .navBarTogglePart:nth-child(2){
+    margin-bottom: 8px;
+  }
+  .active .navBarTogglePart:nth-child(1){
+    -webkit-transform: rotate(50deg) translate(0,0);
+    transform: translate(0,9px) rotate(-135deg);
+  }
+  .active .navBarTogglePart:nth-child(2){
+    transform: translate(35px,0)
+  }
+  .active .navBarTogglePart:nth-child(3){
+    -webkit-transform: rotate(50deg) translate(0,0);
+    transform: translate(0,-9px) rotate(135deg);
   }
 }
