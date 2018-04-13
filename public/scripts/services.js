@@ -11,6 +11,14 @@ function navBar(){
   }
 }
 
+$(window).scroll(function() {
+  var navBar = $('.navBar')
+  if($(window).scrollTop() > 10){
+    navBar.addClass('scrolled')
+  } else {
+    navBar.removeClass('scrolled')
+  }
+})
 
 function accordianToggle(thing) {
   var changeToDeactive = false;

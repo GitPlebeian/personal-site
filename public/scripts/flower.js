@@ -10,6 +10,14 @@ function navBar(){
     obj.style.maxHeight = obj.scrollHeight + 'px'
   }
 }
+$(window).scroll(function() {
+  var navBar = $('.navBar')
+  if($(window).scrollTop() > 10){
+    navBar.addClass('scrolled')
+  } else {
+    navBar.removeClass('scrolled')
+  }
+})
 
 
 function accordianToggle(thing) {

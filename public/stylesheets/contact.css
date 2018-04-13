@@ -18,9 +18,9 @@ form{
   box-sizing: border-box;
   padding: 20px;
   position: absolute;
+  width: 80%;
+  margin: 0 10%;
   top: 72px;
-  left: 50%;
-  transform: translate(-50%,0%);
   background-color: #f64c4d;
   border-radius: 4px;
 }
@@ -30,9 +30,10 @@ input{
   border: none;
   outline: none;
   border-radius: 4px;
-  width: 500px;
+  width: 100%;
   font-size: 20px;
   padding: 6px;
+  box-sizing: border-box;
 }
 textarea{
   box-sizing: border-box;
@@ -72,12 +73,11 @@ label{
 }
 .navBar {
   background-color: #fff;
-  max-width: 552px;
   width: 100%;
   font-size: 20px;
-  padding: 15px 0;
+  padding: 15px 10%;
   box-sizing: border-box;
-  /* box-shadow: 0 0 4px #444; */
+  box-shadow: 0 0 4px #666;
   position: fixed;
   top: 0;
   left: 50%;
@@ -209,13 +209,11 @@ label{
 }
 @media (max-width: 576px) {
   input{
-    width: 86vw;
     font-size: 16px;
   }
   form{
     border-radius: 6px;
     top: 72px;
-    transform: translate(-50%,0%);
   }
   textarea{
     font-size: 16px;
