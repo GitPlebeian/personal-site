@@ -5,26 +5,7 @@ body{
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
-/* width */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #fff;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #fb5096;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #fb5096;
-}
-h1,h2,h3,h4,h5,h6{
+h2,h3,h4,h5,h6{
   font-weight: normal;
 }
 .indentText{

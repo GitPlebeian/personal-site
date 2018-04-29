@@ -1,15 +1,62 @@
+window.onbeforeunload = function () {
+  window.scrollTo(0,0);
+}
+
+var active = true
 function navBar(){
   navBarToggle = $('.navBarToggle')
   obj = document.getElementById("navBarLinks")
 
   $(obj).css('color',"red")
   navBarToggle.toggleClass("active")
+
+  if(active){
+    $('.navBar').toggleClass('active')
+    active = !active
+  } else {
+    setTimeout(function() {
+      $('.navBar').toggleClass('active')
+    }, 150)
+    active = !active
+  }
+
   if(obj.style.maxHeight){
     obj.style.maxHeight = null
   } else {
     obj.style.maxHeight = obj.scrollHeight + 'px'
   }
 }
+
+if(sessionStorage.getItem('firstTime') == null){
+  setTimeout(function() {
+    $('.introMain').addClass('animate')
+  },350)
+
+  setTimeout(function() {
+    $('.introP').addClass('animate')
+  },650)
+  setTimeout(function() {
+    $('.navBar').css('opacity','1')
+  },750)
+} else {
+  $('.introMain').css({'transition' : '0','opacity' : '1','top':'0'})
+  $('.introP').css({'transition' : '0','opacity' : '1','left':'0'})
+  $('.navBar').css({'transition' : '0','opacity' : '1'})
+}
+$(window).scroll(function() {
+  var navBar = $('.navBar')
+  if($(window).scrollTop() > 72){
+    navBar.addClass('scrolled')
+  } else {
+    navBar.removeClass('scrolled')
+  }
+
+  if($(window).scrollTop() > 10){
+    $('.intro').css('height', '400px')
+  }
+})
+
+sessionStorage.setItem('firstTime', false)
 
 
 function accordianToggle(thing) {

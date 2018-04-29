@@ -1,9 +1,21 @@
+var active = true
 function navBar(){
   navBarToggle = $('.navBarToggle')
   obj = document.getElementById("navBarLinks")
 
   $(obj).css('color',"red")
   navBarToggle.toggleClass("active")
+
+  if(active){
+    $('.navBar').toggleClass('active')
+    active = !active
+  } else {
+    setTimeout(function() {
+      $('.navBar').toggleClass('active')
+    }, 160)
+    active = !active
+  }
+
   if(obj.style.maxHeight){
     obj.style.maxHeight = null
   } else {
@@ -11,6 +23,18 @@ function navBar(){
   }
 }
 
+$(window).scroll(function() {
+  var navBar = $('.navBar')
+  if($(window).scrollTop() > 8){
+    navBar.addClass('scrolled')
+  } else {
+    navBar.removeClass('scrolled')
+  }
+
+  if($(window).scrollTop() > 10){
+    $('.intro').css('height', '400px')
+  }
+})
 
 function accordianToggle(thing) {
   var changeToDeactive = false;
