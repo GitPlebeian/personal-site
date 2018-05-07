@@ -55,6 +55,9 @@ app.get("/websites/glass", function(req,res){
 app.get("/websites/homeDetail", function(req,res){
 	res.render("websites/homeDetail");
 });
+app.get("/websites/photography", function(req,res){
+	res.render("websites/photography");
+});
 
 server = http.createServer(options, app)
 io = require('socket.io').listen(server)

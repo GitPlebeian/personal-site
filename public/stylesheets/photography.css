@@ -10,23 +10,55 @@ h1,h2,h3,h4,h5,h6{
 hr{
   border: solid 1px #888;
 }
-.header{
+.fullcover{
+  position: relative;
+}
+.fullcover .fullcoverText{
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%,-30%);
+  margin: 0;
+  color: white;
+  font-size: 6em;
+  font-weight: bold;
+  position: absolute;
   width: 100%;
-  background-color: #FF7A68;
-  overflow: hidden;
-  position: fixed;
+  text-align: center;
+  box-sizing: border-box;
+}
+.fullcover p{
+  display: inline;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  height: 200px;
+  transition: 2s;
+  opacity: 0;
+}
+.fullcover p.up{
+  top: 50px;
+}
+.fullcover p.down{
+  top: -50px;
+}
+.fullcover p.active{
   top: 0;
-  z-index: 100;
+}
+.fullcover p.active2{
+  opacity: 1;
+}
+
+
+.parallax-window {
+  height: 100vh;
+  background: transparent;
 }
 .header h1{
   margin: 15px 0;
   color: white;
   text-align: center;
   transition: 0.6s;
-}
-.header h1.scrolled{
-  font-size: 1.5em;
-  margin: 8px 0;
 }
 .container{
   margin-left: 2.5%;
