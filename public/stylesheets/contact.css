@@ -6,8 +6,6 @@ body{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  /* overflow: hidden; */
-  /* background-color: #5b5b5b; */
 }
 .form{
   display: block;
@@ -22,14 +20,12 @@ form{
   margin: 0 10%;
   top: 72px;
   background-color: #f64c4d;
-  border-radius: 4px;
 }
 input{
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   border: none;
   outline: none;
-  border-radius: 4px;
   width: 100%;
   font-size: 20px;
   padding: 6px;
@@ -39,7 +35,6 @@ textarea{
   box-sizing: border-box;
   border: none;
   padding: 5px;
-  border-radius: 4px;
   outline: none;
   width: 100%;
   resize: none;
@@ -58,7 +53,6 @@ textarea{
   padding: 7px 0;
   font-family: 'Roboto', sans-serif;
   margin-top: 14px;
-  border-radius: 4px;
 }
 .btn:active{
   background-color: #0085e9;

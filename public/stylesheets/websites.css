@@ -73,7 +73,6 @@ a{
   text-decoration: none;
   font-size: 25px;
   background-color: #f9585a;
-  border-radius: 6px 6px 0px 0px;
   text-align: center;
   padding: 10px;
   margin-bottom: 5px;
@@ -81,7 +80,6 @@ a{
 .img img{
   box-sizing: border-box;
   width: 100%;
-  border-radius: 0px 0px 6px 6px;
   border: 1px solid #f64c4d;
 }
 .info{
@@ -91,7 +89,6 @@ a{
   overflow: auto;
   background-color: #16a5f9;
   border: 10px solid #16a5f9;
-  border-radius: 4px;
   text-align: center;
 }
 .container{

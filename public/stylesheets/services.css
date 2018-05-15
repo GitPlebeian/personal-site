@@ -31,10 +31,9 @@ hr{
     background: #666;
 }
 .themedContainer{
-  border-radius: 4px;
   padding: 8px;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 7px #bbb;
+  /*border: 1px solid #ccc;*/
+  box-shadow: 0 0 6px #ddd;
 }
 .navBar {
   background-color: #fff;
