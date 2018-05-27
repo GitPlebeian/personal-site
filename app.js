@@ -58,10 +58,10 @@ app.get("/", function(req, res) {
 
 	});
 
-	// Kitten.find(function(err, kittens) {
-	// 	if (err) return console.error(err);
-	// 	console.log(kittens);
-	// })
+	Connection.find(function(err, Connections) {
+		if (err) return console.error(err);
+		console.log(Connections);
+	})
 
 	// Kitten.find({
 	// 	name: /^Silence/
