@@ -31,8 +31,9 @@ $('.button').click(function() {
 				for (var k = 0; k < differentUsers.length; k++) {
 					console.log('User: ' + k + ' user ' + differentUsers[k].ip + ' ' + !tempUsers.includes(differentUsers[k]))
 					if (!tempUsers.includes(differentUsers[k]) && differentUsers[k].numTimes >= mostVisits) {
+						console.log('User Written: ' + k)
 						pushToTempIndex = k
-						mostVisits = differentUsers[k].ip
+						mostVisits = differentUsers[k].ipv
 					}
 				}
 				console.log('Index to push: ' + pushToTempIndex)
