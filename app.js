@@ -43,7 +43,7 @@ app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
 	str = requestIp.getClientIp(req)
-	newIp = str.slice(0, 7)
+	newIp = str.slice(7, str.length)
 	var connection = new Connection({
 		ip: newIp,
 		numTimes: 0
