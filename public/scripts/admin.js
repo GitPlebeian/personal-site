@@ -5,6 +5,7 @@ $('.button').click(function() {
 		'url': '/trafficData',
 		'type': 'GET',
 		'success': function(rawData) {
+			$('ul.data').empty()
 			for (var i = 0; i < rawData.length; i++) {
 				// console.log('RawDataLoop: ' + i)
 				var alreadyInArray = true
