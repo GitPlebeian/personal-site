@@ -36,4 +36,9 @@ exports.getAllConnections = function() {
 		console.log('asd;lkjr')
 		dataStuff = data
 	})
+
+	console.log(dataStuff)
+
+	return dataStuff
+
 }
