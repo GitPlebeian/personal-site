@@ -13,4 +13,4 @@ var connectionSchema = mongoose.Schema({
 	ip: String
 });
 
-var Connection = mognoose.model('Connection', connectionSchema)
+var Connection = mongoose.model('Connection', connectionSchema)
