@@ -26,7 +26,8 @@ db.once('open', function() {
 });
 
 var connectionSchema = mongoose.Schema({
-	ip: String
+	ip: String,
+	numTimes: 0
 });
 
 var Connection = mongoose.model('Connection', connectionSchema)
@@ -42,7 +43,8 @@ app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
 	var connection = new Connection({
-		ip: requestIp.getClientIp(req)
+		ip: requestIp.getClientIp(req),
+		numTimes: 0
 	})
 	connection.save(function(err, data) {
 		if (err) {
