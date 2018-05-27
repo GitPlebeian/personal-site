@@ -40,6 +40,12 @@ app.get("/", function(req, res) {
 
 	res.render("homepage");
 });
+app.get("/traffic", function(req, res) {
+	connectionModel.saveConnection(requestIp.getClientIp(req))
+
+	res.send(connectionModel.getAllConnections());
+});
+
 
 app.get("/skills", function(req, res) {
 	res.render("skills");
