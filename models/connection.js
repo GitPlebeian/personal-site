@@ -28,17 +28,7 @@ exports.saveConnection = function(userIp) {
 }
 
 exports.getAllConnections = function() {
-	var dataStuff
-	Connection.find(function(err, data) {
-		if (err) {
-			console.log(err)
-		}
-		console.log('asd;lkjr')
-		dataStuff = data
-	})
-
-	console.log(dataStuff)
-
-	return dataStuff
-
+	Connection.find({}, function(err, users) {
+		return users
+	});
 }
