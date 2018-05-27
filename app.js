@@ -42,7 +42,7 @@ app.get("/", function(req, res) {
 });
 app.get("/traffic", function(req, res) {
 	if (true) {
-		res.render('adin');
+		res.render('admin');
 		var data = connectionModel.getAllConnections()
 	}
 });
