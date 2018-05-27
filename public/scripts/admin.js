@@ -24,9 +24,21 @@ $('.button').click(function() {
 					differentUsers.push(rawData[i])
 				}
 			}
-			// console.log(differentUsers)
+			var tempUsers = []
+			var mostVisits = 0
 			for (var i = 0; i < differentUsers.length; i++) {
-				$('ul.data').append('<li>' + differentUsers[i].numTimes + ': ' + differentUsers[i].ip + '</li>')
+				var pushToTempIndex = 0
+				for (var k = 0; k < differentUsers.length; k++) {
+					if (!tempUsers.includes(differentUsers[k]) && differentUsers[k].numTimes >= mostVisits) {
+						pushToTempIndex = k
+						mostVisits = differentUsers[k].ip
+					}
+				}
+				tempUsers.push(differentUsers[pushToTempIndex])
+			}
+			// console.log(differentUsers)
+			for (var i = 0; i < tempUsers.length; i++) {
+				$('ul.data').append('<li>' + tempUsers[i].numTimes + ': ' + tempUsers[i].ip + '</li>')
 			}
 		},
 		'error': function(request, error) {
