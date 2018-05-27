@@ -5,12 +5,20 @@ body{
   font-family: 'Roboto', sans-serif;
   color: #444;
   padding: 10px;
+  font-size: 20px;
 }
 .button{
 	padding: 8px;
 	color: white;
-	background-color: #444;
+	background: #444;
+	transition: 0.2s;
 }
-.buttom p{
-	margin: 0;
+.button:active{
+	border-radius: 10px;
+}
+.data{
+	list-style-type: 
+}
+.numTimes{
+	color: #2f00ff;
 }

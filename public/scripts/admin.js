@@ -29,19 +29,20 @@ $('.button').click(function() {
 				var mostVisits = 0
 				var pushToTempIndex = 0
 				for (var k = 0; k < differentUsers.length; k++) {
-					console.log('User: ' + k + ' user ' + differentUsers[k].ip + ' ' + !tempUsers.includes(differentUsers[k]))
+					// console.log('User: ' + k + ' user ' + differentUsers[k].ip + ' ' + !tempUsers.includes(differentUsers[k]))
 					if (!tempUsers.includes(differentUsers[k]) && differentUsers[k].numTimes >= mostVisits) {
-						console.log('User Written: ' + k)
+						// console.log('User Written: ' + k)
 						pushToTempIndex = k
 						mostVisits = differentUsers[k].numTimes
 					}
 				}
-				console.log('Index to push: ' + pushToTempIndex)
+				// console.log('Index to push: ' + pushToTempIndex)
 				tempUsers.push(differentUsers[pushToTempIndex])
 			}
 			// console.log(differentUsers)
+
 			for (var i = 0; i < tempUsers.length; i++) {
-				$('ul.data').append('<li>' + tempUsers[i].numTimes + ': ' + tempUsers[i].ip + '</li>')
+				$('ul.data').append('<li><span class=\'numTimes\'>' + tempUsers[i].numTimes + '</span>: ' + tempUsers[i].ip + '</li>')
 			}
 		},
 		'error': function(request, error) {
