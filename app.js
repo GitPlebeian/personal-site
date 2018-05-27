@@ -14,6 +14,17 @@ var options = {
 	cert: fs.readFileSync(sslPath + 'fullchain.pem')
 }
 
+var databaseName = 'traffic'
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/' + databaseName);
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+	console.log('Connected to database: ' + databaseName)
+});
+
+
 sgMail.setApiKey(apiKey());
 app.use(bodyParser.urlencoded({
 	extended: true
@@ -23,6 +34,43 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
+	var connection = mongoose.Schema({
+		ip: String
+	});
+
+	connection.methods.speak = function() {
+		var greeting = ''
+		if (this.name) {
+			greeting = 'Hi my name is ' + this.name
+		} else {
+			greeting = 'I dont have a name'
+		}
+	}
+
+	var Connection = mongoose.model('Connection', connection);
+
+	var newConnection = new Connection({
+		name: req.connection.remoteAddress
+	});
+
+	newConnection.save(function(err, newConnection) {
+		if (err) return console.error(err);
+
+	});
+
+	// Kitten.find(function(err, kittens) {
+	// 	if (err) return console.error(err);
+	// 	console.log(kittens);
+	// })
+
+	// Kitten.find({
+	// 	name: /^Silence/
+	// }, function(err, data) {
+	// 	if (err) {
+	// 		console.log(err)
+	// 	}
+	// 	console.log(data)
+	// });
 	res.render("homepage");
 });
 
