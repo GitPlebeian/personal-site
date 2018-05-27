@@ -4,7 +4,8 @@ $('.button').click(function() {
 		'url': '/trafficData',
 		'type': 'GET',
 		'success': function(data) {
-			$('p.data').html(data + " asd;lrj");
+			console.log(data)
+			$('p.data').html(data + " Is Data");
 
 		},
 		'error': function(request, error) {
