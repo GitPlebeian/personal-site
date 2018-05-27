@@ -19,12 +19,17 @@ var databaseName = 'traffic'
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/' + databaseName);
 
-var connectionModel = require('./models/connection.js')
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 	console.log('Connected to database: ' + databaseName)
 });
+
+var connectionSchema = mongoose.Schema({
+	ip: String
+});
+
+var Connection = mongoose.model('Connection', connectionSchema)
 
 
 sgMail.setApiKey(apiKey());
@@ -36,21 +41,28 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
-	connectionModel.saveConnection(requestIp.getClientIp(req))
+	var connection = new Connection({
+		ip: requestIp.getClientIp(req)
+	})
+	connection.save(function(err, data) {
+		if (err) {
+			console.log('Save Err: ' + err)
+		}
+
+	});
 
 	res.render("homepage");
 });
 app.get("/traffic", function(req, res) {
 	if (true) {
 		res.render('admin');
-		var data = connectionModel.getAllConnections()
 	}
 });
 app.get('/trafficData', function(req, res) {
-	var data = connectionModel.getAllConnections()
-	console.log(connectionModel.getAllConnections() + 'is the model That i have')
-	console.log(data + 'inside TRaffic data')
-	res.send(data)
+	Connection.find({}, function(err, users) {
+		console.log(users + 'this is my data')
+		res.send(users)
+	});
 })
 
 
