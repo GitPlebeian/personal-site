@@ -15,6 +15,8 @@ var connectionSchema = mongoose.Schema({
 
 var Connection = mongoose.model('Connection', connectionSchema)
 
+var exports = module.exports = {};
+
 exports.saveConnection = function(userIp) {
 	var connection = new Connection({
 		ip: userIp
