@@ -41,11 +41,14 @@ app.get("/", function(req, res) {
 	res.render("homepage");
 });
 app.get("/traffic", function(req, res) {
-	var data = connectionModel.getAllConnections()
-	console.log(data)
-
-	res.send(data);
+	if (true) {
+		res.render('adin');
+		var data = connectionModel.getAllConnections()
+	}
 });
+app.get('/trafficData', function(req, res) {
+	res.send(connectionModel.getAllConnections())
+})
 
 
 app.get("/skills", function(req, res) {
