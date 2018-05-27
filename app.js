@@ -48,6 +48,7 @@ app.get("/traffic", function(req, res) {
 });
 app.get('/trafficData', function(req, res) {
 	var data = connectionModel.getAllConnections()
+	console.log(data)
 	res.send(data)
 })
 
