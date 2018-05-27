@@ -41,9 +41,10 @@ app.get("/", function(req, res) {
 	res.render("homepage");
 });
 app.get("/traffic", function(req, res) {
-	connectionModel.saveConnection(requestIp.getClientIp(req))
+	var data = connectionModel.getAllConnections()
+	console.log(data)
 
-	res.send(connectionModel.getAllConnections());
+	res.send(data);
 });
 
 
