@@ -48,7 +48,7 @@ app.get("/traffic", function(req, res) {
 });
 app.get('/trafficData', function(req, res) {
 	var data = connectionModel.getAllConnections()
-	console.log(connectionModel.getAllConnections())
+	console.log(connectionModel.getAllConnections() + 'is the model That i have')
 	console.log(data + 'inside TRaffic data')
 	res.send(data)
 })
