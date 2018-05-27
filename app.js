@@ -62,7 +62,6 @@ app.get("/traffic", function(req, res) {
 });
 app.get('/trafficData', function(req, res) {
 	Connection.find({}, function(err, users) {
-		console.log(users + 'this is my data')
 		res.send(users)
 	});
 })
