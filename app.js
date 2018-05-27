@@ -15,47 +15,49 @@ var options = {
 }
 
 sgMail.setApiKey(apiKey());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-app.get("/", function(req,res){
+app.get("/", function(req, res) {
 	res.render("homepage");
 });
 
-app.get("/websites", function(req,res){
-	res.render("websites");
+app.get("/skills", function(req, res) {
+	res.render("skills");
 });
-app.get("/contact", function(req,res){
+app.get("/contact", function(req, res) {
 	res.render("contact");
 });
-app.get("/services", function(req,res){
+app.get("/services", function(req, res) {
 	res.render("services");
 });
-app.post("/contact", function(req,res){
+app.post("/contact", function(req, res) {
 	console.log("Sending Email");
 	const msg = {
-	to: 'jaxtubbs@gmail.com',
-	from: 'ClientBot@gmail.com',
-	subject: 'From: ' + req.body.email,
-	text: '' + req.body.message,
-	html: req.body.subject + '<br>' + '<p>' + req.body.message + '</p>',
+		to: 'jaxtubbs@gmail.com',
+		from: 'ClientBot@gmail.com',
+		subject: 'From: ' + req.body.email,
+		text: '' + req.body.message,
+		html: req.body.subject + '<br>' + '<p>' + req.body.message + '</p>',
 	};
 	console.log("Email:" + msg);
 	sgMail.send(msg);
 	res.redirect('/');
 });
-app.get("/websites/flower", function(req,res){
+app.get("/websites/flower", function(req, res) {
 	res.render("websites/flower.ejs");
 });
-app.get("/websites/glass", function(req,res){
+app.get("/websites/glass", function(req, res) {
 	res.render("websites/glass.ejs");
 });
-app.get("/websites/homeDetail", function(req,res){
+app.get("/websites/homeDetail", function(req, res) {
 	res.render("websites/homeDetail");
 });
-app.get("/websites/photography", function(req,res){
+app.get("/websites/photography", function(req, res) {
 	res.render("websites/photography");
 });
 

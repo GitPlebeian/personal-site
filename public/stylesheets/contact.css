@@ -204,7 +204,6 @@ label{
     font-size: 16px;
   }
   form{
-    border-radius: 6px;
     top: 72px;
     margin: 0 2.5%;
     width: 95%;
@@ -229,6 +228,9 @@ label{
     float: left;
     width: 100%;
     transition: 0.3s;
+  }
+  .navBarLinks .main{
+    display: none;
   }
   .navBar a{
     display: block;
