@@ -14,3 +14,14 @@ var connectionSchema = mongoose.Schema({
 });
 
 var Connection = mongoose.model('Connection', connectionSchema)
+
+exports.saveConnection = function(userIp) {
+	var connection = new Connection({
+		ip: userIp
+	})
+	console.log(connection.ip)
+}
+
+exports.getAllConnections = function() {
+
+}

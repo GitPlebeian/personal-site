@@ -3,6 +3,7 @@ app = express();
 const bodyParser = require('body-parser')
 const sgMail = require('@sendgrid/mail');
 var apiKey = require('./apikey.js')
+const requestIp = require('request-ip');
 
 var http = require('https')
 var fs = require('fs')
@@ -35,26 +36,8 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
+	connectionModel.saveConnection(requestIp.getClientIp(req))
 
-
-	newConnection.save(function(err, newConnection) {
-		if (err) return console.error(err);
-
-	});
-
-	Connection.find(function(err, Connections) {
-		if (err) return console.error(err);
-		console.log(Connections);
-	})
-
-	// Kitten.find({
-	// 	name: /^Silence/
-	// }, function(err, data) {
-	// 	if (err) {
-	// 		console.log(err)
-	// 	}
-	// 	console.log(data)
-	// });
 	res.render("homepage");
 });
 
