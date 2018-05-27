@@ -47,7 +47,8 @@ app.get("/traffic", function(req, res) {
 	}
 });
 app.get('/trafficData', function(req, res) {
-	res.send(connectionModel.getAllConnections())
+	var data = connectionModel.getAllConnections()
+	res.send()
 })
 
 
