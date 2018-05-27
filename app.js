@@ -46,7 +46,7 @@ app.get("/", function(req, res) {
 	newIp = str.slice(7, str.length)
 	var connection = new Connection({
 		ip: newIp,
-		numTimes: 0
+		numTimes: 1
 	})
 	connection.save(function(err, data) {
 		if (err) {
