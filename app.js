@@ -42,8 +42,10 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
+	str = requestIp.getClientIp(req)
+	newIp = str.slice(0, 7)
 	var connection = new Connection({
-		ip: requestIp.getClientIp(req),
+		ip: newIp,
 		numTimes: 0
 	})
 	connection.save(function(err, data) {
