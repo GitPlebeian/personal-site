@@ -13,12 +13,17 @@ body{
 	background: #444;
 	transition: 0.2s;
 }
-.button:active{
-	border-radius: 10px;
+.button:hover{
+	border-radius: 15px;
 }
 .data{
 	list-style-type: 
 }
 .numTimes{
 	color: #2f00ff;
+}
+@media (max-width: 576px){
+	body{
+		font-size: 15px;
+	}
 }
