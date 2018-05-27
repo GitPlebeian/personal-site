@@ -29,6 +29,7 @@ exports.saveConnection = function(userIp) {
 
 exports.getAllConnections = function() {
 	Connection.find({}, function(err, users) {
+		console.log(users)
 		return users
 	});
 }
