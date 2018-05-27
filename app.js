@@ -48,18 +48,6 @@ app.post("/contact", function(req, res) {
 	sgMail.send(msg);
 	res.redirect('/');
 });
-app.get("/websites/flower", function(req, res) {
-	res.render("websites/flower.ejs");
-});
-app.get("/websites/glass", function(req, res) {
-	res.render("websites/glass.ejs");
-});
-app.get("/websites/homeDetail", function(req, res) {
-	res.render("websites/homeDetail");
-});
-app.get("/websites/photography", function(req, res) {
-	res.render("websites/photography");
-});
 
 server = http.createServer(options, app)
 io = require('socket.io').listen(server)
