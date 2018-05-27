@@ -35,6 +35,7 @@ $('.button').click(function() {
 						mostVisits = differentUsers[k].ip
 					}
 				}
+				console.log('Index to push: ' + pushToTempIndex)
 				tempUsers.push(differentUsers[pushToTempIndex])
 			}
 			// console.log(differentUsers)
