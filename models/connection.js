@@ -19,7 +19,12 @@ exports.saveConnection = function(userIp) {
 	var connection = new Connection({
 		ip: userIp
 	})
-	console.log(connection.ip)
+	connection.save(function(err, data) {
+		if (err) {
+			console.log('Save Err: ' + err)
+		}
+
+	});
 }
 
 exports.getAllConnections = function() {
