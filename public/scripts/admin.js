@@ -25,8 +25,8 @@ $('.button').click(function() {
 				}
 			}
 			var tempUsers = []
-			var mostVisits = 0
 			for (var i = 0; i < differentUsers.length; i++) {
+				var mostVisits = 0
 				var pushToTempIndex = 0
 				for (var k = 0; k < differentUsers.length; k++) {
 					console.log('User: ' + k + ' user ' + differentUsers[k] + tempUsers.includes(differentUsers[k]))
